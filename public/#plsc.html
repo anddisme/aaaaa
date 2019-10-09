@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script src="/public/bootstrap/js/jquery.min.js"></script>
+<script type="text/javascript" src="/public/layer/layer.js"></script>
+<script src="/public/pub/js/pub.js"></script>
+<script src="/public/js/img.js"></script>
+
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+<div class="img1">
+<div class="fileupqm" ty="1" obj=".img1" selects="#face"></div>
+<input type="hidden" name='face' id='face' datatype='*5-68'>
+<input type="file" class="file" title="点击上传图片">
+</div>
+<div id="img1div"></div>
+<script>
+function tate()
+{
+    var v=$('#face').val();
+    if (v!='')
+    {
+        var htm='<img src="'+v+'" />';
+        $('#img1div').html(htm);
+    }
+    else
+    {
+         $('.dem2 .btn_sc p').html();  
+    }
+}
+setInterval('tate()',1000);
+</script>
+
+
+
+
+
+
+<div class="img2">
+<div class="fileupqm" ty="1" obj=".img2" selects="#face1"></div>
+<input type="hidden" name='face1' id='face1' datatype='*5-68'>
+<input type="file" class="file" title="点击上传图片">
+</div>
+<div id="img2div"></div>
+<script>
+function tate1()
+{
+    var v=$('#face1').val();
+    if (v!='')
+    {
+        var htm='<img src="'+v+'" />';
+        $('#img2div').html(htm);
+    }
+    else
+    {
+         $('.dem2 .btn_sc p').html();  
+    }
+}
+setInterval('tate1()',1000);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

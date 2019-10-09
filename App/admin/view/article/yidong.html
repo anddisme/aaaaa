@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>修改内容</title>
+<script type="text/javascript" charset="utf-8" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+<include file='index/js' />
+
+
+</head>
+<style>
+body{
+	font-size:12px;
+}
+</style>
+<body class="mainbody">
+<script>
+function closelayer()
+{
+	var index=parent.layer.getFrameIndex(window.name);
+	parent.layer.close(index);
+}
+$(function(){
+   	$(".btntj").click(function(){
+		var ydtoid=$('#ydtoid option:selected').val();
+		if(ydtoid<1)
+		{
+		  alert('请选择要移动到的栏目！');	
+		  return false;
+		}
+		if(!confirm("移动选中文档到 "+$('#ydtoid option:selected').attr('fd')+" 吗？"))
+		{
+			return false;
+		}
+		
+ var actionurl="<!--{:url('Article/yidong')}-->?TypeID="+ydtoid+"&act=1&ActionIDList=<!--{:get('ActionIDList')}-->";
+ $.getJSON(actionurl,function(data){
+	var zt=data.zt;
+	if(zt=='1')
+	{
+		shows_('移动成功');
+		parent.location.reload();  
+		var index=parent.layer.getFrameIndex(window.name);
+		parent.layer.close(index);
+		return false;
+	}else{
+		shows_(data.text);
+		return false;
+	}
+	
+  });		
+		
+		
+			
+	})	   
+})
+</script>
+
+<table width="100%" border="0" cellspacing="1" cellpadding="1">
+  <tr>
+    <td width="22%" height="40">文档id</td>
+    <td width="78%" height="40">
+    <input type="text" class="input normal" style="width:100%;" value="<!--{:get('ActionIDList')}-->" readonly="readonly"></td>
+  </tr>
+  <tr>
+    <td height="40">移动到</td>
+    <td height="40">
+<select name="ydtoid" id="ydtoid" class="input" style="width:100%;">
+<option value="0" > 选择栏目</option>
+<!--{:categoryTree(0,'')}-->
+</select>
+    </td>
+  </tr>
+  <tr>
+    <td height="45">&nbsp;</td>
+    <td height="45">
+    <input type="button" class="btn btntj btn-primary" value="确定移动" />
+    <input type="button" id="closeIframe" onClick="return closelayer();" class="btn yellow filetext" value="取消操作" />
+    
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

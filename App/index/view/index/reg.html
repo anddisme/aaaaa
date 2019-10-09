@@ -1,0 +1,94 @@
+<include file="index:head" />
+<div class="blue-bd"></div>
+<div class="reg-bg white-bg">
+    <div class="container">
+        <div class="login-wrap">
+            <link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+            <script type="text/javascript" src="/public/layer/layer.js"></script>
+            <script src="/public/pub/validform/js/validform_v5.3.2.js"></script>
+            <script src="/public/pub/validform/js/validform.js"></script>
+            <script src="/public/pub/validform/js/validform_v5.3.2.js"></script>
+            <script src="/public/pub/validform/js/validform.js"></script>
+            <form action="/index.php/index_Login_reg" method="post" class="form-horizontal== login-form">
+                <div class="t-c">
+                    <div class="login-tit i-b">
+                        <img src="/s/images/logo3.png" alt=""><span>人人帮线索系统</span>
+                    </div>
+                </div>
+                <input type="text" name="username" datatype="*4-15" msg="请输入正确的用户名" placeholder="请输入账号" >
+                <input type="password" name="password" id="password" datatype="*4-100" msg="请输入正确的密码" placeholder="请输入密码">
+                <input type="password" name="spassword" placeholder="请输入确认密码"  recheck="password" msg="两次输入的密码不一致">
+                <input type="text"  name="companyname" datatype="*4-15"   placeholder="公司名称">
+                <input type="text" name="phone" id="phone" datatype="m" msg="请输入正确的电话号码" placeholder="请输入电话号码" placeholder="请输入电话号码">
+                <div class="clearfix">
+                    <input type="text" placeholder="输入验证码" class="yzm-inp">
+                    <div class="yzm">
+                        <input type="button" id="getsms" style="width:147px;height: 40px;" value="发送验证码" />
+                    </div>
+                </div>
+                <input type="submit" value="登 录" class="login-btn">
+                <p>已经是会员？<a href="<!--{:url('Login/login')}-->">立即登录</a></p>
+            </form>
+            <script>
+                $(".form-horizontal input").focus(function(){
+                    var obj=$(this);
+                    if (obj.hasClass("Validform_error"))
+                    {
+                        var v=obj.val();
+                        var msg=obj.attr('msg');
+                        var msg2=obj.attr('placeholder');
+                        if (v=='')
+                        {
+                            layer.msg(msg2,{time:3000});
+                        }
+                        else
+                        {
+                            layer.msg(msg,{time:3000});
+                        }
+                    }
+                });
+            </script>
+            <script>
+                $("document").ready(function(){
+                    $("#getsms").click(function(){
+                        var phone =$("#phone").val();
+//                        if(isNaN(phone) || phone.length!=11)
+//                        {
+//                            show_('请输入正确的手机号码');
+//                            return false;
+//                            //show_('请输入正确的手机号码！');
+//                        }
+                        $("#getsms").val(60 + "秒后重新获取");
+                        //time("getsms");
+                        $.ajax({
+                            type: "POST",
+                            url: "<!--{:url('common/regsms')}-->",
+                            data: {phone:phone},
+                            dataType: "json",
+                            success: function(data){
+
+                            }
+                        });
+                        alert(phone);
+                    })
+                });
+                var wait=60;
+                function time(o) {
+                    if (wait == 0) {
+                        $("#"+o).removeAttr("disabled");
+                        $("#"+o).val("发送验证码");
+                        wait = 60;
+                    } else {
+                        $("#"+o).attr("disabled", true);
+                        $("#"+o).val(wait + "秒后重新获取");
+                        wait--;
+                        setTimeout(function() { time(o);},1000);
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</div>
+
+
+<include file="index:foot" />

@@ -1,0 +1,69 @@
+.nav-category-bg{
+	background:rgba(255,255,255,0.8) !important;filter:Alpha(opacity=80) !important;; 
+} 
+ul.points{
+	display: block;
+	width: 100%;min-height: 1px;height: auto;overflow: hidden;
+	padding: 30px 0;
+}
+ul.points > li{
+    position: relative;
+    display: block; float: left;
+    width: 280px;height: 306px;	
+	background-color: #fff;
+    margin: 20px 28px 0 0;
+}
+ul.points > li.one{
+	margin: 20px 28px 0 2px !important;
+}
+ul.points > li.four{
+	margin: 20px 0 0 0 !important;
+}
+ul.points > li a.image{
+	display: block;
+	width: 280px;height: 180px;
+}
+ul.points > li h2.title{
+	width: 100%; height: 22px;line-height: 22px;overflow: hidden;
+	margin: 5px 0;padding: 0 8px;
+	font-size: 16px;font-weight: 600;
+	color: #222;
+}
+ul.points > li p.desc{
+	width: 100%;height: 36px;line-height: 18px;overflow: hidden;
+	margin: 5px 0;padding: 0 8px;
+	font-size: 12px;
+}
+ul.points > li h5.price{
+	position: relative;
+	width: 100%;height: 44px;line-height: 44px;
+}
+ul.points > li h5.price strong,
+ul.points > li h5.price small{
+	display: block;float: left;
+	height: 44px;
+	padding: 0 0 0 8px;
+}
+ul.points > li h5.price strong{
+	line-height: 34px;
+	font-size: 14px;font-weight: 400;
+	color: #E23F38;
+}
+ul.points > li h5.price strong b{
+	font-size: 20px;font-weight: 600;
+}
+ul.points > li h5.price small{
+	line-height: 36px;
+	font-size: 14px;font-weight: 400;
+	color: #666;
+	text-decoration: line-through; 
+}
+ul.points > li h5.price a{
+	position: absolute;
+	right: -4px;
+	display: block;
+	width: 98px; height: 44px;line-height: 44px;
+	background: url("../images/read_bg.png") no-repeat scroll 0 0;
+	text-align: center;
+	font-size: 14px; color: #fff;
+}

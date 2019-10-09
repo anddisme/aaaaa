@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>信息管理</title>
+<link href="/public/skin/scripts/artdialog/ui-dialog.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/css/pagination.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<include file="index/js" />
+</head>
+
+<body class="mainbody">
+<form id="form1" name="form1" method="post" action="run.php?a=Pub&a=action111" onSubmit="return false;">
+<input type="hidden" id="ActionIDList" name="ActionIDList" />
+<input type="hidden" id="Action" name="Action" />
+<input type="hidden" id="TypeID" name="TypeID" />
+<input type="hidden" id="table" name="table" value="article" />
+<input type="hidden" id="backurl" name="backurl" value="__URL__&TypeID=<!--{$TypeID}-->&Recommend=<!--{$Recommend}-->" />
+
+
+<div class="location">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('Index/main')}-->" class="home"><i></i><span>首页</span></a>
+  
+  <i class="arrow"></i>
+  <span><a href="<!--{:url('Article/index')}-->">内容管理</a></span>
+<php>
+$patharr=getidlist1($TypeID);
+foreach($patharr as $k=>$v)
+{
+if($v>0)
+{
+$vstr=typearr($v);
+
+echo '<i class="arrow"></i><span><a href="'.url('Article/index',array('TypeID'=>$vstr['id'])).'">'.$vstr['TypeName'].'</a></span>';
+}
+}
+</php>  
+ 
+ 
+<if condition="$Recommend gt 0"><i class="arrow"></i><span><!--{:NewsRecommed($Recommend)}--><a style="color:red; padding-left:5px;" href="<!--{:url('Article/index',array('TypeID'=>$TypeID,'kw'=>''))}-->?&kw=<!--{:get('kw')}-->&pxget=<!--{:get('pxget')}-->&istop=<!--{:get('istop')}-->">X</a></span></if>
+
+<if condition="$istop gt 0"><i class="arrow"></i><span>置顶
+<a style="color:red; padding-left:5px;" href="<!--{:url('Article/index',array('TypeID'=>$TypeID))}-->?Recommend=<!--{:get('Recommend')}-->&kw=<!--{:get('kw')}-->&pxget=<!--{:get('pxget')}-->">X</a></span></if>
+
+
+
+<if condition="$kw neq ''"><i class="arrow"></i><span><!--{$kw}--><a style="color:red; padding-left:5px;" href="<!--{:url('Article/index',array('TypeID'=>$TypeID,'kw'=>''))}-->?Recommend=<!--{:get('Recommend')}-->&pxget=<!--{:get('pxget')}-->">X</a></span></if> 
+
+</div>
+<!--/导航栏-->
+
+<script>
+function typeidisnull()
+{
+ var TypeID='<!--{$TypeID}-->';
+ if(TypeID<1)
+ {
+	show_('请选择栏目.');
+   $("#parentID").focus();
+   $("#parentID").css("border",'1px solid red');
+   return false;
+ } 
+}
+</script>
+<!--工具栏-->
+<div id="floatHead" class="toolbar-wrap">
+
+
+
+
+
+
+
+
+<div class="toolbar" style="float:left; width:100%; border-bottom:1px solid #CCC; padding-bottom:20px; margin-bottom:10px;">
+<div style="float:left; width:70%; height:auto;">
+<style>
+.lmlist{
+float:left;
+width:100%;
+height:auto;
+line-height:25px;
+font-size:12px;
+color:#666;
+font-weight:normal;
+}
+.lmlist span{
+float:left;
+width:auto;
+min-width:65px;
+text-align:right;
+height:auto;
+font-weight:bold;
+text-align:left;
+
+}
+.lmlist a{
+float:left;
+width:auto;
+height:auto;
+padding-left:5px;
+padding-right:5px;
+color:#666
+}
+.lmlist .cur{
+color:#27a9e3;
+font-weight:bold;
+}
+</style>
+
+<php>
+$patharr=typepatharr($TypeID);//获取路径ID数组
+
+$patharr[0]=0;
+if(!$patharr)
+{
+  $patharr=array(0);
+}
+$keyk='';
+</php>
+<foreach name="patharr" item="path" key="keyk">
+<if condition="is_numeric($path)">
+<php>
+$caidan=caidan($path,1000);
+
+$nowTypeName=typearr($path,'TypeName');
+if(empty($nowTypeName)){ $nowTypeName='网站栏目'; }
+$nextnum=sizeof($caidan);
+
+//print_r($caidan);
+if($caidan)
+{
+</php>
+<div class="lmlist">
+<span><!--{$nowTypeName}-->：</span>
+<foreach name="caidan" item="cd">
+<php>
+$cur='';
+$class='';
+if($TypeID>0)
+{
+    $cur=1;
+}
+if($cd['id']==$patharr[$keyk+$cur]){ $class='cur'; }
+</php>
+<a class="<!--{$class}-->"  href="<!--{:url('Article/index',array('TypeID'=>$cd['id']))}-->"><!--{$cd['TypeName']}--></a>
+</foreach>
+</div>
+<php>
+}
+</php>
+</if>
+</foreach>
+
+</div>
+
+
+<div class="box-wrap" style="float:right; width:auto;">
+
+<div class="l-list">
+<ul class="icon-list">
+  <li><a class="add" onClick="return typeidisnull()" href="<!--{:url('Article/add',array('TypeID'=>$TypeID))}-->"><i></i><span>发布内容</span></a></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+<script>
+function kwss()
+{
+  var pxget=$("#pxget").find("option:selected").val();
+  var TypeID=$("#parentID").find("option:selected").val();
+  var Recommend=$("#Recommend").val();
+  if($("#kw").val()=='' && Recommend=='')
+  {
+   //alert('请输入ID/标题搜索文档');
+   //$("#kw").focus();
+   //$("#kw").css("border",'1px solid red');
+	//return false;
+  }
+  if(Recommend<1) Recommend='';
+  window.location='<!--{:url("Article/index")}-->?istop=<!--{:get('istop')}-->&TypeID='+TypeID+'&pxget='+pxget+'&Recommend='+Recommend+'&kw='+$("#kw").val();
+}
+</script>
+
+
+<div style=" width:auto; height:auto; margin-top:10px; margin-bottom:10px; font-size:12px; text-align:center; margin:auto; padding-top:10px; padding-bottom:10px;  color:#999; ">
+
+栏目：<select name="parentID" id="parentID" class="input normal"  class="form-control wat" style="font-size:12px; width:auto; " onChange="window.location='<!--{:url('Article/index')}-->?TypeID='+this.value">
+<option selected='selected' value="0">所有栏目</option>
+<!--{:categoryTree(0,$TypeID)}-->
+</select>
+<php>
+$NewsRecommed=NewsRecommed();
+</php>
+属性：<select name="Recommend" id="Recommend" class="input normal" style="font-size:12px; width:100px" >
+<option selected='selected' value="0">默认</option>
+<foreach name="NewsRecommed" item="rd" key="key">
+<if condition="$key gt 0">
+<option <if condition="$Recommend eq $key">selected='selected'</if> value="<!--{$key}-->"><!--{$rd}--></option>
+</if>
+</foreach>
+
+</select>
+排序：<select name="pxget" id="pxget" class="input normal"  style="font-size:15px; width:100px" >
+<option <if condition="$pxget eq ''">selected='selected'</if> value="">默认</option>
+<option <if condition="$pxget eq 'endtime'">selected='selected'</if> value="endtime">更新时间</option>
+<option <if condition="$pxget eq 'read_num'">selected='selected'</if> value="read_num">浏览量</option>
+<option <if condition="$pxget eq 'istop'">selected='selected'</if> value="istop">置顶状态</option>
+</select>
+
+关键词：<input type="text" name="" class="input normal" style="text-indent:0px; width:120px" id="kw" value="<!--{$kw}-->">
+ <input class="btn btn-primary" type="button" onClick="return kwss()" value="搜 索" />
+	
+</div>
+
+<!--/工具栏-->
+
+<!--列表-->
+<div class="table-container">
+  
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
+    <tr>
+      <th width="8%">ID</th>
+      <th align="left" width="58%">标题</th>
+      <th width="6%">栏目</th>
+      <th width="5%">状态</th>
+      <th width="3%">点击</th>
+      <th width="14%">发布时间</th>
+      <th width="6%">操作</th>
+    </tr>
+  
+   
+  
+
+<foreach name="list" item="news">
+<tr id="<!--{$news['id']}-->">
+<td align="center">
+<span class="checkall">
+<input type="checkbox" id="IDList" name="IDList" style="border:n0" value="<!--{$news.id}-->" /> 
+</span>
+<!--{$news.id}-->
+
+</td>
+<td>
+
+<a href="<!--{:url('Article/updata',array('id'=>$news['id']))}-->">
+<!--{$news.Title|jiezi=0,20,'UTF-8',true}-->
+<if condition="$news.S_Image neq ''"><font  style="color:#f00" class="picshow" rel="<!--{$news.S_Image}-->">[图]</font></if>
+<php>
+$tjlistarr=explode(",",$news['Recommend']);
+</php>
+<foreach name="tjlistarr" item="tj">
+<if condition="$tj gt 0">
+<font>[<a style="color:#f00;" href="<!--{:url('Article/index')}-->?TypeID=<!--{$TypeID}-->&Recommend=<!--{$tj}-->&pxget=<!--{:get('pxget')}-->&istop=<!--{:get('istop')}-->&kw=<!--{:get('kw')}-->"><!--{:NewsRecommed($tj)}--></a>]</font>
+</if>
+</foreach>
+<if condition="$news['istop'] gt 0">[<font style="color:#27a9e3">
+<a style="color:#27a9e3;" href="<!--{:url('Article/index')}-->?TypeID=<!--{$TypeID}-->&istop=1&Recommend=<!--{:get('Recommend')}-->&pxget=<!--{:get('pxget')}-->&kw=<!--{:get('kw')}-->">置顶</a></font>]</if>
+
+</a>
+<php>
+$fjidstr=$news['fjid'];
+$fjidstr=ltrim($fjidstr, ",");
+$fjidstr=rtrim($fjidstr, ",");
+$fjid=explode(",",$fjidstr);
+if($fjid[0]>0)
+{
+$listfj=M("news_type")->field("`id`,`TypeName`")->where("`id` in($fjidstr)")->select();
+</php>
+<div style="float:left; width:100%; height:auto; color:#FF3300;">
+附属栏目：
+<foreach name="listfj" item="type">
+<a style="color:#FF3300" href="<!--{:url('Article/index')}-->?TypeID=<!--{$type.id}-->">[<!--{$type.TypeName}-->]</a>
+</foreach>
+</div>
+<php>
+}
+</php>
+</td>
+<php>
+
+<php>
+$TypeArr=typearr($news['TypeID']);
+</php>
+<td align="center"><a href="<!--{:url('Article/index')}-->?TypeID=<!--{$TypeArr['id']}-->"><!--{$TypeArr['TypeName']}--></a></td>
+<td align="center">
+<if condition="$news['isVerify'] eq 1">
+<span style="color:#960">已审</span>
+<else />
+<span style="color:red">未审</span></if>
+</td>
+<td align="center" fd="read_num"><!--{$news.read_num|default=0}--></td>
+<td align="center"><!--{$news.endtime|date='Y-m-d H:i:s',###}--></td>
+
+<td align="center">
+
+<a href="<!--{:url('Article/updata',array('id'=>$news['id']))}-->">修改</a> <a onClick="return delid('<!--{$news.id}-->','article')" href="javascript:;">删除</a>
+
+</td>
+</tr>
+</foreach>
+
+  
+    
+  </table>
+
+  <div class="toolbar" style="float:left;">
+<div class="box-wrap">
+<a class="menu-btn"></a>
+<div class="l-list">
+<ul class="icon-list">
+<label class="foot-label">
+<input type="checkbox" style="border:1px solid #ccc" id="cbSelectAll" name="cbSelectAll" value="checkbox" onClick="mySelectAll()" />
+全选</label>
+<button class="btn btn-primary" onClick="return myAction('delnews')">&nbsp;选中删除&nbsp;</button>
+<button class="btn btn-primary" onClick="return myAction('isVerify1')">&nbsp;选中审核&nbsp;</button>
+<button class="btn btn-primary" onClick="return myAction('isVerify0')">&nbsp;取消审核&nbsp;</button>
+<button class="btn btn-primary" onClick="return myAction('yd')">&nbsp;批量移动&nbsp;</button>
+
+
+
+<!--<select name="ydtoid" id="ydtoid" onChange="return myAction('yd',this.value)" class="btn btn-primary" style=" height:33px; width:140px;">
+<option value="0" > 批量移动文档</option>
+--{:categoryTree(0,'')}-
+</select>
+</ul>-->
+
+
+
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+
+<!--{$list->render()}-->
+<div class="paging" style="color:#666; text-align:right;">
+<select style="border:1px solid #f5f5f5; color:#666;" onChange="location='<!--{:url('Article/index',array('TypeID'=>$TypeID))}-->?PageSize='+this.value">
+<!--{:pagesize($PageSize)}-->
+</select>  
+</div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+<!--/列表-->
+
+
+
+</form>
+</body>
+
+</html>

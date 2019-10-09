@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>后台导航管理</title>
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<include file="index/js" />
+
+</head>
+<body class="mainbody">
+<!--导航栏-->
+<div class="location">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('Index/main')}-->" class="home" target="mainframe"><i></i><span>首页</span></a>
+  <i class="arrow"></i>
+  <span>栏目管理</span>
+</div>
+<!--/导航栏-->
+
+<!--工具栏-->
+<div id="floatHead" class="toolbar-wrap">
+  <div class="toolbar">
+<script src="/public/js/gl.js"></script>
+<script>
+$(function(){
+$("#gaoliang").click(function () {
+    var otext = $("#kw").val();
+   shows_('搜索结果将以绿色文字呈现');
+    $(".ltablek").GL({
+        ocolor:'#13d86a',   //设置关键词高亮颜色
+        oshuru:otext   //设置要显示的关键词
+    });
+})
+})
+</script>
+
+<div style="float:left; height:auto;  font-size:12px; color:#999;">
+搜索：<input type="text" name="" class="input normal" style="text-indent:0px; width:200px" id="kw" value="<!--{:get('kw')}-->">
+<input class="btn btn-primary" type="button" id="gaoliang" value="搜 索">
+</div>
+    <div class="box-wrap" style="float:right;">
+      <a class="menu-btn"></a>
+      <div class="l-list">
+        <ul class="icon-list">
+          <li><a class="add" href="<!--{:url('Lm/add')}-->"><i></i><span>新增栏目</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/工具栏-->
+<style>
+
+#color1{
+
+font-size:15px;
+color:#16a0d3
+}
+#color2{
+font-size:14px;
+color:#ff6600;
+}
+#color3{
+font-size:12px;
+color:#000;
+
+}
+#color4{
+
+color:#666;
+
+}
+</style>
+<!--列表-->
+<div class="table-container">
+  
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltablek">
+    <tr>
+      <th width="77%" align="left" style="padding-left:10px;">栏目名称</th>
+      <th width="10%"></th>
+      <th width="8%" align="left" style="text-align:right;">操作</th>
+      <th width="5%">排序</th>
+    </tr>
+<!--{$TypeList}-->
+  </table>
+</div>
+<input type="hidden" id="table" name="table" value="lm" />
+</body>
+</html>

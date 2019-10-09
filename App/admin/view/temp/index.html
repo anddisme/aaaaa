@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>信息管理</title>
+<link href="/public/skin/scripts/artdialog/ui-dialog.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/css/pagination.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+<include file='index/js' />
+</head>
+<body class="mainbody">
+
+
+<div class="location" style="font-family:Verdana, Geneva, sans-serif;">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('Temp/index')}-->" class="home"><i></i><span>/></span></a>
+
+  <php>
+  $tempshow=$tempshow;
+  $tempshow1=explode("/",$tempshow);
+  foreach($tempshow1 as $k=>$v)
+  {
+       if(!empty($v))
+       {
+            $start = strpos($tempshow,$v);
+            $last=substr($tempshow,0,$start);
+           
+            $nowurl=delxg(url('Temp/index').'?dir='.urlencode($last).'/'.$v);
+            echo '<a href="'.$nowurl.'">'.$v.'</a>/';
+        } 
+  }
+  </php>
+ 
+  
+
+
+</div>
+<!--/导航栏-->
+<!--工具栏-->
+<div id="floatHead" class="toolbar-wrap">
+<div class="toolbar" style="float:left; width:100%; ">
+
+
+
+<div class="box-wrap" style=" color:#060;  background:red; width:100%;">
+<div class="l-list">
+
+<ul class="icon-list">
+<form action="<!--{:url('Temp/add')}-->" method="post" enctype="multipart/form-data"  class="form-horizontal1">
+上传文件：<input name="myFile" id="myFile" class="myFile" type="file" style="width:150px; height:35px; position:absolute; background:#000; FILTER: alpha(opacity:0);-moz-opacity:0;opacity:0; ">
+<input type="button" value="选择文件" class="btn yellow filetext" style="width:150px;" />
+<input type="hidden" name="tempshow" class="tempshow" value="<!--{$tempshow}-->" />
+<input type="submit" value="开始上传" class="btn filebotton" style="width:auto; padding-left:10px; padding-right:10px;" />
+</form>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+ $(".myFile").change(function(){
+	var text = $(this).val();						  
+    $('.filetext').val(text);
+	return false;
+	})
+   
+	$(".filebotton").click(function(){
+		if($('.filetext').val()=='' || $('.filetext').val()=='选择文件'){
+		shows_('请选择要上传的文件');
+		return false;
+		}						  
+	})
+	 
+})
+
+</script>
+
+
+
+
+
+<!--/工具栏-->
+
+<!--列表-->
+<div class="table-container">
+  <form id="form1" name="form1" method="post" action=""  class="form-horizontal=">
+<input type="hidden" id="ActionIDList" name="ActionIDList" />
+<input type="hidden" id="Action" name="Action" />
+<input type="hidden" id="table" name="table" value="ad" />
+<input type="hidden" id="backurl" name="backurl" value="__URL__" />
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
+    <tr>
+      <th width="5%">选择</th>
+      <th align="left" width="49%" style="text-indent:1%;">名称</th>
+      <th width="6%" align="left">类型</th>
+      <th width="18%" align="left">信息</th>
+      <th width="10%" align="right" style="padding-right:20px;">操作</th>
+    </tr>
+  
+   
+
+    
+    
+    
+
+<foreach name="listdir" item="arc">
+<php>
+$filepath=$tempshow.'/'.$arc;
+$filepath=urlencode($filepath);
+$type=pathtype($filepath);
+
+</php>
+<tr id="<!--{$tempshow}-->/<!--{:urlencode($arc)}-->">
+<td align="center">
+<span class="checkall">
+<input type="checkbox" id="IDList" name="IDList" style="border:n0" value="<!--{:delxg($tempshow.'/'.urlencode($arc))}-->" /> 
+</span>
+</td>
+<td style="text-indent:1%; font-size:13px; <if condition="get('file') eq $arc">color:red;</if>">
+<if condition="$type['type'] eq 'dir'">
+<a style="<if condition="get('file') eq $arc">color:red;</if>" href="?dir=<!--{:urlencode(delxg($tempshow.'/'.$arc))}-->"><!--{$arc}--></a> 
+<else />
+
+<!--{$arc}--> 
+
+</if>
+
+</td>
+<td align="left">
+<if condition="$type['type'] eq 'dir'">文件夹<else />文件|<!--{$type['extension']}--></if>
+</td>
+<td align="left">
+<php>
+$filepath1=delxg(WEB_ROOT.'/'.$tempshow.'/'.$arc);
+
+
+if($type['type']=='file')
+{
+$filesize=formatBytes(filesize($filepath1));
+echo '大小:'.$filesize;
+echo '<br>时间:'.date("Y-m-d H:i:s",filemtime($filepath1));
+
+}else{
+ //$filesize=formatBytes(getDirSize($filepath1));
+}
+</php>
+
+</td>
+<td align="right" style="padding-right:20px;">
+ <if condition="$type['extension'] eq 'zip'">
+  <a onClick="if(!confirm('解压后将覆盖已存在的文件夹或文件，确定要解压吗？')){ return false; }" href="<!--{:url('Temp/zipfile')}-->?files=<!--{:urlencode(delxg($tempshow.'/'.$arc))}-->">解压</a> 
+  </if> 
+
+ <if condition="$type['extension'] eq 'txt' || $type['extension'] eq 'html' || $type['extension'] eq 'php' || $type['extension'] eq 'css'">
+  <a href="<!--{:url('Temp/updata')}-->?files=<!--{:urlencode(delxg($tempshow.'/'.$arc))}-->">修改</a> 
+  </if>
+  <a href="<!--{:url('Temp/ziprar')}-->?files=<!--{:urlencode(delxg($tempshow.'/'.$arc))}-->">打包</a> 
+  <a href="<!--{:url('Temp/download')}-->?files=<!--{:urlencode(delxg($tempshow.'/'.$arc))}-->">下载</a> 
+  <del  style="text-decoration:line-through; color:#999;" href="javascript:;">删除</del>
+</td>
+</tr>
+</foreach>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </table>
+  <div class="toolbar" style="float:left;">
+<div class="box-wrap">
+<a class="menu-btn"></a>
+<div class="l-list">
+<ul class="icon-list">
+<label class="foot-label">
+<input type="checkbox" style="border:1px solid #ccc" id="cbSelectAll" name="cbSelectAll" value="checkbox" onClick="mySelectAll()" />
+全选</label>
+<button class="btn btn-primary" onClick="return myAction('ziprar')">&nbsp;文件压缩&nbsp;</button>
+</ul>
+</div>
+</div>
+</div>
+
+
+ 
+ </div>
+</div>
+</form>
+<include file='index/foot' />
+</body>
+</html>

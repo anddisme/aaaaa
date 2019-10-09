@@ -1,0 +1,23 @@
+<script src="/public/pub/validform/js/validform_v5.3.2.js"></script>
+<script src="/public/pub/validform/js/validform.js"></script>
+
+<script>
+$(".form-horizontal input").focus(function(){
+var obj=$(this);
+if (obj.hasClass("Validform_error"))
+{
+  var v=obj.val();
+//  alert('111');
+  var msg=obj.attr('msg');
+  var msg2=obj.attr('placeholder');
+  if (v=='')
+  {
+	layer.msg(msg2,{time:3000});
+  }
+  else
+  {
+	layer.msg(msg,{time:3000});
+  }    
+}
+});  
+</script> 

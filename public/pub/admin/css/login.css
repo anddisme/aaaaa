@@ -1,0 +1,46 @@
+/* admin login page */
+body {
+    background: #fff url("../images/login_bgx.gif") repeat scroll 0 0;
+	background:#608E11;
+    color: #5a5a5a;
+    font: 12px/180% Arial,Helvetica,Verdana;
+    margin: 0;
+}
+.login-form {
+    margin: 16% auto 30px;
+    width: 400px;height: 302px; 
+    padding:10px  60px 20px;   
+    background-color: #fff;
+    position: relative;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0) url("../images/login_m_bg.png") no-repeat scroll 0 0;
+}
+h3.form-header{
+    text-align: center;
+    font-size: 18px;color: #686868;
+    line-height: 28px; color:#608E11;
+}
+#sInfo{ font-weight:bold;color:#608E11;}
+.form-control{
+    height: 40px !important;line-height: 40px;
+}
+.form-verify {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    height: 38px;
+    line-height: 1.42857;
+    width: 100%;
+}
+.login-into-home{
+  padding-top:12px; 
+}
+.error-alert{
+  position: relative;
+  z-index: 999;
+}+

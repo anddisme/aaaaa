@@ -1,0 +1,31 @@
+<php>
+if(empty($article['id']) && empty($TypeArr['id'])){
+</php>
+<title><!--{$web['t3']}--></title>
+<meta name="keywords" content="<!--{$web['SeoTitle']}-->"/>
+<meta name="description" content="<!--{$web['Description']}-->"/>
+<php>
+}else{
+</php>
+<if condition="$seotype eq 'info'">
+	<if condition="$article.seotitle neq ''">
+	<title><!--{$article.seotitle}--></title>
+	<else />
+	<title><!--{$article.Title}-->_<!--{$web.Title}--></title>
+	</if>
+	<meta name="keywords" content="<!--{$article.seokeywords|default=$web[SeoTitle]}-->"/>
+	<meta name="description" content="<!--{$article.seodescription|default=$web[Description]}-->"/>
+<else />
+	<if condition="$TypeArr.seo_title neq ''">
+	<title><!--{$TypeArr.seo_title}--></title>
+	<else />
+	<title><!--{$TypeArr.TypeName}-->_<!--{$web.Title}--></title>
+	</if>
+	<meta name="keywords" content="<!--{$TypeArr.seo_keywords|default=$web[SeoTitle]}-->"/>
+	<meta name="description" content="<!--{$TypeArr.seo_miaoshu|default=$web[Description]}-->"/>
+</if>
+<php>
+}
+</php>
+<META http-equiv="X-UA-Compatible" content="IE=9" ></META>
+

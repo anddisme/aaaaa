@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>修改内容</title>
+<script type="text/javascript" charset="utf-8" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+	<include file="index/js" />
+
+
+</head>
+
+<body class="mainbody">
+
+
+
+<div class="location">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('Index/main')}-->" class="home"><i></i><span>首页</span></a>
+  
+  <i class="arrow"></i>
+  <span><a>新增会员</a></span>
+
+</div>
+<div class="line10"></div>
+<!--/导航栏-->
+
+
+
+
+
+
+
+<!--内容-->
+<div id="floatHead" class="content-tab-wrap">
+  <div class="content-tab">
+    <div class="content-tab-ul-wrap">
+      <ul>
+        <li><a class="selected" href="javascript:;">基本信息</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content">
+<form name="form1" id="from1" method="post" action=""  class="form-horizontal">
+
+
+
+
+<dl>
+<dt>名称</dt>
+<dd>
+<input type="text" name="username" class="input normal" id="username"  value="<!--{$links.username}-->"  placeholder="请输入名称"  datatype="*1-16">
+</dd>
+</dl>
+
+<dl>
+<dt>密码</dt>
+<dd>
+<input type="text" name="password" class="input normal" id="password"  value="<!--{$links.password}-->">
+</dd>
+</dl>
+	<dl>
+		<dt>确认密码</dt>
+		<dd>
+			<input type="text" name="spassword" class="input normal" id="spassword"  value="<!--{$links.spassword}-->">
+		</dd>
+	</dl>
+	<dl>
+		<dt>电话号码</dt>
+		<dd>
+			<input type="text" name="telphone" class="input normal" id="telphone"  value="<!--{$links.telphone}-->">
+		</dd>
+	</dl>
+	<dl>
+		<dt>公司名称</dt>
+		<dd>
+			<input type="text" name="company_name" class="input normal" id="company_name"  value="<!--{$links.company_name}-->">
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/public/bjq/themes/default/default.css" />
+<script type="text/javascript" src="/public/bjq/kindeditor-min.js"></script><!--编辑器-->
+<script type="text/javascript" src="/public/bjq/lang/zh_CN.js"></script><!--公用-->
+<script type="text/javascript" src="./Tpl/Public/js/common.js"></script>  		
+		<script>
+			KindEditor.ready(function(K) {
+				var editor = K.editor({
+					allowFileManager : true
+				});
+				K('#yyzz_').click(function() {
+					editor.loadPlugin('image', function() {
+						editor.plugin.imageDialog({
+							imageUrl : K('#yyzz').val(),
+							clickFn : function(url, title, width, height, border, align) {
+								K('#yyzz').val(url);
+								editor.hideDialog();
+							}
+						});
+					});
+				});
+				K('#B_Image_').click(function() {
+					editor.loadPlugin('image', function() {
+						editor.plugin.imageDialog({
+							imageUrl : K('#B_Image').val(),
+							clickFn : function(url, title, width, height, border, align) {
+								K('#B_Image').val(url);
+								editor.hideDialog();
+							}
+						});
+					});
+				});
+				
+			});
+		</script>
+
+
+<dl>
+<dt>营业执照</dt>
+<dd>
+<div id="yyzz_a">
+<input type="text" name="yyzz" class="input normal" id="yyzz" style="width:200px;" value="<!--{$links.yyzz}-->">
+<input class="btn btn-primary" type="button" id="yyzz_" value="上传图片" />
+<font  style="color:#27a9e3; display:none;" class="picshow" rel="<!--{$links.yyzz}-->">[预览]</font>
+</div>
+<script>
+  setInterval('imgchange("yyzz")',1000);
+</script>
+
+</dd>
+</dl>
+
+
+
+
+  
+
+</div>
+
+
+
+<!--/内容-->
+
+<!--工具栏-->
+<div class="page-footer">
+  <div class="btn-wrap">
+
+    <input type="submit" name="btnSubmit" value="提交保存" id="btnSubmit" class="btn" />
+    <input name="btnReturn" type="button" value="返回上一页" class="btn yellow" onClick="javascript:history.back(-1);" />
+  </div>
+</div>
+<!--/工具栏-->
+
+  </form>
+
+<include file="index/foot" />
+
+</body>
+</html>

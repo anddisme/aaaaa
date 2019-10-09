@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台首页</title>
+<link href="/Admin/Tpl/style1/public/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../public/ckfinder/ckfinder.js"></script>
+</head>
+ 
+<body>
+<div id="main_content">
+	
+
+		<script language="javascript" type="text/javascript">	
+		var finder = new CKFinder();
+		finder.BasePath = '../public/ckfinder/';
+		//finder.SelectFunction = ShowFileInfo ;
+		finder.Create() ;
+		</script>
+		</div>
+	</div>
+	<div class="dbox">
+		<div class="dbox_title" style="font-size:14px; margin-top:10px;">说明</div>
+		<div style="padding:10px; font-size:12px; ">
+			1. Images文件夹只能上传图片文件. flash文件夹只能上传flash文件. medias文件夹只能上传媒体文件<br />
+			2. 可以在现有的文件夹下创建子文件夹, 不能创建一级文件夹.<br />
+			3. small目录为缩略图保存目录. 
+		</div>
+	</div>
+</div>
+</body>
+</html>

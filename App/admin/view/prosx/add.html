@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>修改内容</title>
+<script type="text/javascript" charset="utf-8" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+<include file='index/js' />
+
+
+</head>
+
+<body class="mainbody">
+
+
+
+<div class="location">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('index/main')}-->" class="home" target="mainframe"><i></i><span>首页</span></a>
+  
+  <i class="arrow"></i>
+  <span><a>添加属性</a></span>
+ 
+</div>
+<div class="line10"></div>
+<!--/导航栏-->
+
+
+
+
+
+
+
+<!--内容-->
+<div id="floatHead" class="content-tab-wrap">
+  <div class="content-tab">
+    <div class="content-tab-ul-wrap">
+      <ul>
+        <li><a class="selected" href="javascript:;">基本信息</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content">
+<form name="form1" id="from1" method="post" action=""  class="form-horizontal">
+
+
+
+<dl>
+<dt>所属父级</dt>
+<dd>
+
+
+
+<select class="input normal"  name="pid" id="pid">
+<option value="0"> 顶级</option>
+<foreach name=":prosxlist(0,0)" item="cy">
+<option <if condition="$cy['id'] eq $pid">selected="selected"</if> value="<!--{$cy['id']}-->"><!--{$cy['cat_name']}--></option>
+</foreach>
+</select>
+</dd>
+</dl>
+
+<if condition="$pid eq ''">
+
+<dl>
+<dt>商品类型名称</dt>
+<dd>
+<input type="text" name="cat_name" class="input normal" id="cat_name"  value="<!--{$links.cat_name}-->" >
+</dd>
+</dl>
+</if>
+	<if condition="$pid neq ''">
+
+<dl>
+<dt>属性名称</dt>
+<dd>
+<input type="text" name="attr_name" class="input normal" id="attr_name"  value="<!--{$links.attr_name}-->">
+</dd>
+</dl>
+
+<dl>
+<dt>属性值</dt>
+<dd>
+<input type="text" name="attr_values" class="input normal" id="attr_values"  value="<!--{$links.attr_values}-->">
+</dd>
+</dl>
+</if>
+
+<dl style="display: none;">
+<dt>电话地址</dt>
+<dd>
+<input type="text" name="address" class="input normal" id="address"  value="<!--{$links.address}-->">
+</dd>
+</dl>
+
+<dl  style="display: none;">
+<dt>电话地址</dt>
+<dd>
+<input type="text" name="address" class="input normal" id="address"  value="<!--{$links.address}-->">
+</dd>
+</dl>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/public/bjq/themes/default/default.css" />
+<script type="text/javascript" src="/public/bjq/kindeditor-min.js"></script><!--编辑器-->
+<script type="text/javascript" src="/public/bjq/lang/zh_CN.js"></script><!--公用-->
+<script type="text/javascript" src="./Tpl/Public/js/common.js"></script>  		
+		<script>
+			KindEditor.ready(function(K) {
+				var editor = K.editor({
+					allowFileManager : true
+				});
+				K('#S_Image_').click(function() {
+					editor.loadPlugin('image', function() {
+						editor.plugin.imageDialog({
+							imageUrl : K('#S_Image').val(),
+							clickFn : function(url, title, width, height, border, align) {
+								K('#S_Image').val(url);
+								editor.hideDialog();
+							}
+						});
+					});
+				});
+				K('#B_Image_').click(function() {
+					editor.loadPlugin('image', function() {
+						editor.plugin.imageDialog({
+							imageUrl : K('#B_Image').val(),
+							clickFn : function(url, title, width, height, border, align) {
+								K('#B_Image').val(url);
+								editor.hideDialog();
+							}
+						});
+					});
+				});
+				
+			});
+		</script>
+
+
+<dl  style="display: none;">
+<dt>图片</dt>
+<dd>
+<div id="S_Image_a">
+<input type="text" name="S_Image" class="input normal" id="S_Image" style="width:200px;" value="<!--{$links.S_Image}-->">
+<input class="btn btn-primary" type="button" id="S_Image_" value="上传图片" />
+<font  style="color:#27a9e3; display:none;" class="picshow" rel="<!--{$links.S_Image}-->">[预览]</font>
+</div>
+<script>
+  setInterval('imgchange("S_Image")',1000);
+</script>
+
+</dd>
+</dl>
+
+
+
+
+<dl  style="display: none;">
+<dt>电话地址</dt>
+<dd>
+<input type="text" name="address" class="input normal" id="address"  value="<!--{$links.address}-->">
+</dd>
+</dl>
+
+
+
+
+<dl  style="display: none;">
+<dt>网站标题</dt>
+<dd>
+<input type="text" name="t" class="input normal" style="width:60%;" id="t" value="<!--{$links['t']}-->">
+</dd>
+</dl>
+
+<dl  style="display: none;">
+<dt>关键词</dt>
+<dd>
+<input type="text" name="k" class="input normal" style="width:60%;" id="k" value="<!--{$links['k']}-->">
+</dd>
+</dl>
+
+<dl  style="display: none;">
+<dt>描述</dt>
+<dd>
+<textarea name="d" cols="80" class="input normal b60" rows="4" style="width:60%" id="d"><!--{$links['d']}--></textarea>
+</dd>
+</dl>
+
+
+
+<dl  style="display: none;">
+<dt>附加代码</dt>
+<dd>
+<textarea name="js" cols="80" class="input normal b60" rows="10" style="width:60%; height:300px;" id="js"><!--{$links['js']}--></textarea>
+</dd>
+</dl>
+
+
+
+  
+
+</div>
+
+
+
+<!--/内容-->
+
+<!--工具栏-->
+<div class="page-footer">
+  <div class="btn-wrap">
+
+    <input type="submit"  value="提交保存" id="btnSubmit" class="btn" />
+    <input type="button" value="返回上一页" class="btn yellow" onClick="javascript:history.back(-1);" />
+  </div>
+</div>
+<!--/工具栏-->
+
+  </form>
+  
+<include file='index/foot' />
+
+</body>
+</html>

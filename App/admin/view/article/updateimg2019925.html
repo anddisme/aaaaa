@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>修改内容</title>
+<script type="text/javascript" charset="utf-8" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+<include file='index/js' />
+
+
+</head>
+<style>
+body{
+	font-size:12px;
+}
+</style>
+<body class="mainbody">
+<script>
+function closelayer()
+{
+	var index=parent.layer.getFrameIndex(window.name);
+	parent.layer.close(index);
+}
+$(function(){
+   	$(".btntj").click(function(){
+		var tplj=$('#tplj').val();
+		if(!confirm("你确定要修改这张图片吗？"))
+		{
+			return false;
+		}
+		
+ var actionurl="<!--{:url('Article/updateimg')}-->?tupian="+tplj;
+ $.getJSON(actionurl,function(data){
+	var zt=data.zt;
+	if(zt=='1')
+	{
+		shows_('修改成功');
+		parent.location.reload();  
+		var index=parent.layer.getFrameIndex(window.name);
+		parent.layer.close(index);
+		return false;
+	}else{
+		shows_(data.text);
+		return false;
+	}
+	
+  });		
+		
+		
+			
+	})	   
+})
+
+$(document).ready(function(){
+	$(".myfile").change(function(){
+		var text = $(this).val();
+		$('#tplj').val(text);
+		return false;
+	});
+})
+</script>
+
+<table width="100%" border="0" cellspacing="1" cellpadding="1">
+	<form method="post" action="<!--{:url('Article/updateimg')}-->" enctype="multipart/form-data">
+		<input type="hidden" name="id"  value="<!--{$id}-->"></td>
+  <tr>
+    <td width="22%" height="40">图片路径</td>
+    <td width="78%" height="40">
+    <input type="text" id="tplj" class="input normal" style="width:100%;" value=""></td>
+  </tr>
+  <tr>
+    <td height="40">上传图片</td>
+    <td height="40">
+		<input type="file" class="myfile" name="mytupian"  style="width:200px; height:35px; position:absolute; background:#000; FILTER: alpha(opacity:0);-moz-opacity:0;opacity:0; ">
+		<input type="button" value="上传图片" class="btn yellow filetext" style="width:200px;">
+    </td>
+  </tr>
+  <tr>
+    <td height="45">&nbsp;</td>
+    <td height="45">
+    <input type="submit" class="btn btntj1 btn-primary" value="确定修改" />
+    <input type="button" id="closeIframe" onClick="return closelayer();" class="btn yellow filetext" value="取消操作" />
+    
+    </td>
+  </tr>
+		</form>
+</table>
+
+</body>
+</html>

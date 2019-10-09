@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>信息管理</title>
+<link href="/public/skin/scripts/artdialog/ui-dialog.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/css/pagination.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<include file="index/js" />
+</head>
+
+<body class="mainbody">
+<form id="form1" name="form1" method="post" action="" onSubmit="return false;">
+<input type="hidden" id="ActionIDList" name="ActionIDList" />
+<input type="hidden" id="Action" name="Action" />
+<input type="hidden" id="TypeID" name="TypeID" />
+<input type="hidden" id="table" name="table" value="article" />
+<input type="hidden" id="backurl" name="backurl" value="__URL__&TypeID=<!--{$TypeID}-->&Recommend=<!--{$Recommend}-->" />
+
+
+<div class="location">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('Index/main')}-->" class="home" target="mainframe"><i></i><span>首页</span></a>
+  
+  <i class="arrow"></i>
+  <span><a>回收站</a></span>
+
+ 
+
+
+</div>
+
+<script>
+function tos()
+{
+  if($("#kw").val()=='')
+  {
+    //show_('请输入搜索关键词');
+	//return false;
+  }
+  window.location='<!--{:url("Article/hsz")}-->?kw='+$("#kw").val();
+}
+</script>
+<div style="float:left; height:auto; margin-top:20px; margin-bottom:10px;  font-size:12px; color:#999;">
+搜索：<input type="text" name="" class="input normal" style="text-indent:0px; width:200px" id="kw" value="<!--{:get('kw')}-->">
+<input class="btn btn-primary" type="button" onClick="return tos()" value="搜 索">
+</div>
+
+
+</div>
+
+
+
+
+<!--/工具栏-->
+
+<!--列表-->
+<div class="table-container" style="margin-top:30px;">
+  
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
+    <tr>
+      <th width="5%">ID</th>
+      <th align="left" width="56%">标题</th>
+      <th align="left" width="13%">栏目</th>
+      <th align="left" width="13%">删除时间</th>
+      <th width="13%" align="left">原时间</th>
+    </tr>
+  
+   
+  
+
+<foreach name="list" item="news">
+<tr id="<!--{$news['id']}-->">
+<td align="center">
+<span class="checkall">
+<input type="checkbox" id="IDList" name="IDList" style="border:n0" value="<!--{$news.id}-->" /> 
+</span>
+<!--{$news.id}-->
+
+</td>
+<td>
+
+<!--{$news.Title|jiezi=0,20,'UTF-8',true}-->
+
+</td>
+<td>
+<!--{:typearr($news['TypeID'],'TypeName')}-->
+</td>
+<td align="left"><!--{$news.deltime|date='Y-m-d H:i:s',###}--></td>
+<td align="left"><!--{$news.endtime|date='Y-m-d H:i:s',###}--></td>
+
+
+</tr>
+</foreach>
+
+  
+    
+  </table>
+
+  <div class="toolbar" style="float:left;">
+<div class="box-wrap">
+<a class="menu-btn"></a>
+<div class="l-list">
+<ul class="icon-list">
+<label class="foot-label">
+<input type="checkbox" style="border:1px solid #ccc" id="cbSelectAll" name="cbSelectAll" value="checkbox" onClick="mySelectAll()" />
+全选</label>
+<div class="btn btn-primary" onClick="return myAction('huanyuan')">&nbsp;选中还原&nbsp;</div>
+<div class="btn btn-primary" onClick="return myAction('DelSome')">&nbsp;选中清空&nbsp;</div>
+
+</ul>
+
+
+</div>
+</div>
+
+</div>
+  
+
+<div class="paging" style="color:#666; text-align:right;">
+<!--{$fenye}-->
+</div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+<!--/列表-->
+
+
+
+</form>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<include file='index/head' />
+<div class="container in-wrap">
+<div class="crumbs">
+<a href="/">首页</a> <!--{$pathmenu}-->
+</div>
+<ul class="clearfix honor-list">
+   
+<foreach name="list_array" item="menu">
+<li>
+<div class="honor-img"><img src="<!--{$menu['S_Image']}-->" alt="<!--{$menu['Title']}-->"></div>
+<span><!--{$menu['Title']|jiezi=0,30,"utf-8",false}--></span>
+</li>
+</foreach>
+</ul>
+<div class="page-wrap t-c">
+<div class="i-b">
+<!--{$fenye}-->
+</div>
+</div>
+</div>
+</div>
+<include file='index/foot' />

@@ -1,0 +1,175 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>留言列表</title>
+<link rel="stylesheet" type="text/css" href="skin/css/base.css">
+<script language="javascript">
+  function mySelectAll()
+  {
+  	 //alert(document.getElementById("cbSelectAll").checked);
+//	 alert(document.form1.IDList.length);
+     if(document.getElementById("cbSelectAll").checked)
+	 {
+	     if(document.form1.IDList.length==null)
+		 {
+		    //不是数组
+			document.form1.IDList.checked=true;
+		 }else{
+			 for(var i=0;i<document.form1.IDList.length;i++)
+			 {
+				document.form1.IDList[i].checked=true;
+			 }
+		 }
+	 }else{
+	     if(document.form1.IDList.length==null)
+		 {
+		    //不是数组
+			document.form1.IDList.checked=false;
+		 }else{
+			 for(var i=0;i<document.form1.IDList.length;i++)
+			 {
+				document.form1.IDList[i].checked=false;
+			 }
+		 }
+	 }
+  }
+  
+  function myAction(type)
+  {
+	 var s="";
+	 if(document.form1.IDList.length==null)
+	 {
+		//不是数组
+		if(document.form1.IDList.checked)
+		{
+			s=document.form1.IDList.value;	
+		}
+	 }else{
+		 for(var i=0;i<document.form1.IDList.length;i++)
+		 {
+			 if(document.form1.IDList[i].checked)
+			 {
+				s+=document.form1.IDList[i].value+",";
+			 }
+		 }
+		 if(s!="")
+		 {
+			s=s.substr(0,s.length-1);
+		 }
+	 }
+	 if(s=="")
+	 {
+	 	alert("你没有选择要操作的数据，请选择");
+		return false;
+	 }
+	 if(type=="DelSome")
+	 {
+	    if(!confirm("你确定要批量删除选择中数据吗？"))
+		{
+	 		return false;
+		}
+	 }
+	 document.form1.Action.value=type;
+	 document.form1.ActionIDList.value=s;
+     document.form1.submit();
+     return false;
+  }
+</script>
+</head>
+<script src="../public/js/pop.js"></script>
+<body leftmargin="8" topmargin="8" background='skin/images/allbg.gif'>
+<!--  快速转换位置按钮  -->
+<!--  内容列表   -->
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="e7e7e7" align="center">
+
+<tr>
+ <td height="26" background="skin/images/newlinebg3.gif">
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  <td width="30%" align="left" style="padding-left:10px;"><strong>留言反馈</strong></td>
+  <td width="70%" align="left" style="padding-right:5px; text-align:right">&nbsp;</td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="e7e7e7" align="center" style="margin-top:8px">
+
+<form id="form1" name="form1" method="post" action="run.php?a=Pub&a=action">
+<input type="hidden" id="ActionIDList" name="ActionIDList" />
+<input type="hidden" id="Action" name="Action" />
+<input type="hidden" id="table" name="table" value="guest_info" />
+<input type="hidden" id="backurl" name="backurl" value="__URL__" />
+<tr bgcolor="#E7E7E7">
+	<td height="24" colspan="13" background="skin/images/tbg.gif"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><if condition="$Type eq 1">泸州老窖</if><if condition="$Type eq 2">西凤酒</if><if condition="$Type eq 2">郎酒</if>留言列表</td>
+</tr>
+<tr align="center" bgcolor="#FAFAF1" height="22">
+	<td colspan="9" align="left">
+    <table width="100%">
+    
+          
+<foreach name="list" item="arr">
+<tr>
+<td height="20" bgcolor="#EFEFEF">
+<input type="checkbox" id="IDList" name="IDList" value="<!--{$arr.id}-->" />
+&nbsp;&nbsp;
+姓名:<font color=#990000;><?=$arr[RelName]?></font>　座机电话:<font color=#990000;><!--{$arr.Tel}--></font>　　手机号码:<font color=#990000;><!--{$arr.Mobile}--></font>　 访问时间:<font color=#990000;> <!--{$arr.time}--></font>   　 电子邮箱:<font color=#990000;> <!--{$arr.Email}--></font>   　 联系地址:<font color=#990000;> <!--{$arr.Address}--></font>　 留言时间:<font color=#990000;> <!--{$arr.CreateTime}--></font>   
+&nbsp;<font color=#990000;>
+<if condition="$arr.isVerify eq '1'"></if>
+</font>
+<if condition="$arr.Reply_Content eq ''"></if>
+
+
+<a  class="button" value="删除" href="run.php?m=Pub&a=del&id=<!--{$news.id}-->&table=guest_info" onClick="return confirm('请谨慎删除,确定要删除吗？');" style="color:#F00" >删除</a>  </td>
+</tr>
+<tr>
+<td height="20">
+<div style="line-height:20px; color:#666666; font-size:12px; padding:5px;">
+ 
+<fieldset id="create_categories" style="border : 1px solid #cccccc; padding:9px; margin:0; font-size:12px;">
+  
+<!--{$arr.Content}-->
+
+</fieldset>
+
+
+
+</div>      </td>
+</tr>
+</foreach>
+
+
+ 
+        
+        
+        
+        
+      </table>
+    
+    &nbsp;</td>
+  </tr>
+
+
+
+<tr bgcolor="#FAFAF1">
+<td height="28" colspan="11" style="text-indent:60px;">
+	<a href="#" onClick="return myAction('DelSome')"  class="coolbg">&nbsp;选中删除&nbsp;</a>
+	<a href="#" onClick="return myAction('isVerify1')" class="coolbg">&nbsp;选中审核&nbsp;</a>
+	<a href="#" onClick="return myAction('isVerify0')" class="coolbg">&nbsp;取消审核&nbsp;</a>
+    
+    
+    
+</td>
+</tr>
+
+
+<tr align="right" bgcolor="#EEF4EA">
+  <td height="36" colspan="13" align="center">
+  <!--{$fenye}-->
+  </td>
+</tr>
+ </form>
+</table>
+
+</body>
+</html>

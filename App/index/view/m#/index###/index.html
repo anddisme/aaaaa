@@ -1,0 +1,311 @@
+<include file='index/head' />
+<div class="banner">
+    <div class="hd t-c">
+        <ul class="i-b">
+<foreach name=":ads(10)" item="ad">
+<li></li>
+</foreach>
+        </ul>
+    </div>
+    <div class="bd">
+        <ul>
+<foreach name=":ads(10)" item="ad">
+<li style="background: url('<!--{$ad['S_Image']}-->') no-repeat center;"></li>
+</foreach>
+        </ul>
+    </div>
+</div>
+<div class="part1 gary-bg">
+    <div class="container">
+<php>
+$about=getonce(1);
+</php>    
+<div class="part1-bg clearfix">
+<div class="part1-l"><img class="img-auto" src="<!--{$about['S_Image']}-->" alt="<!--{$about['Title']}-->"></div>
+<div class="part1-r">
+<div class="title1">
+<span>About Us</span>
+<h3>关于我们</h3>
+<i></i>
+</div>
+<p>
+<!--{$about['Content']|gethtml|jiezi=0,180,'utf-8',true}--></p>
+<div class="clearfix">
+<a href="<!--{:lmurl($about['TypeID'])}-->" class="more1">MORE <span>></span></a>
+</div>
+
+</div>
+</div>
+    </div>
+</div>
+<div class="part2">
+    <div class="container">
+        <div class="part-tit">
+            <span>Main Products</span>
+            <h3>主营产品</h3>
+        </div>
+        <div class="pro-slide clearfix">
+            <div class="hd">
+                <div>产品类别</div>
+<ul>
+<foreach name=":caidan(2)" item="cd">
+<li><!--{$cd['TypeName']}--></li>
+</foreach>
+             
+                </ul>
+            </div>
+            <div class="bd">
+<foreach name=":caidan(2,6)" item="cd">
+<ul>
+<foreach name=":arclist($cd[id])" item="arc">
+<li>
+<a href="<!--{$arc['id']|idlname}-->">
+<div class="pro-img"><img class="img-auto" src="<!--{$arc['S_Image']}-->" alt="<!--{$arc['Title']}-->"></div>
+<div class="pro-name"><!--{$arc['Title']|jiezi=0,15,'utf-8',false}--></div>
+</a>
+</li>
+</foreach>
+</ul>
+</foreach>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="part3">
+    <div class="container">
+        <div class="part-tit">
+            <span>Engineering Equipment</span>
+            <h3>工程设备</h3>
+            <i></i>
+        </div>
+        <ul class="equip-list clearfix">
+<foreach name=":arclist(3,5)" item="arc">
+<li>
+<a href="<!--{$arc['id']|idlname}-->">
+<div class="equip-img"><img class="img-auto" src="<!--{$arc['S_Image']}-->" alt="<!--{$arc['Title']}-->"></div>
+<div class="equip-name"><!--{$arc['Title']|jiezi=0,15,'utf-8',false}--></div>
+</a>
+</li>
+</foreach>
+        </ul>
+        <a href="<!--{:lmurl(3)}-->" class="more-btn">MORE <span> > </span></a>
+    </div>
+</div>
+<div class="part4">
+    <div class="container">
+        <div class="part-tit">
+            <span>Service Flow</span>
+            <h3>服务流程</h3>
+            <i></i>
+        </div>
+        <div class="flow-img"><img class="img-res" src="/s/images/flow.png" alt=""></div>
+        <div class="part-tit" style="margin-top: 52px;">
+            <span>Why Choose Us</span>
+            <h3>为什么选择我们</h3>
+            <i></i>
+        </div>
+    </div>
+</div>
+<div class="part5 gary-bg">
+    <div class="container">
+        <div class="part-tit">
+            <span>Performance Testing</span>
+            <h3>性能测试</h3>
+            <i></i>
+        </div>
+        <ul class="test-list clearfix">
+<foreach name=":arclist(16,4)" item="arc">
+<li>
+<a href="<!--{$arc['id']|idlname}-->">
+<img class="img-auto" src="<!--{$arc['S_Image']}-->" alt="<!--{$arc['Title']}-->">
+<div class="test-box">
+<span><!--{$arc['Title']|jiezi=0,15,'utf-8',false}--></span>
+</div>
+</a>
+</li>
+</foreach>
+        </ul>
+    </div>
+</div>
+<div class="part6">
+    <div class="container clearfix">
+        <div class="part6-l">
+            <div class="clearfix news-top">
+                <div class="title2 fl">
+                    <span>News & Information</span>
+                    <h3>新闻资讯</h3>
+                    <i></i>
+                </div>
+                <a href="<!--{:lmurl(4)}-->" class="more1">MORE <span>></span></a>
+            </div>
+            <ul class="news-list1 clearfix">
+<foreach name=":arclist(4,4)" item="arc" key="key">
+<if condition="$key eq 0">
+<li class="hl-news clearfix">
+<div class="hl-img"><img src="<!--{$arc['S_Image']}-->" alt="<!--{$arc['Title']}-->"></div>
+<div class="news-r">
+<div class="news-tit-top clearfix">
+<a href="<!--{$arc['id']|idlname}-->"><!--{$arc['Title']|jiezi=0,15,'utf-8',false}--></a>
+<span><!--{$arc['endtime']|date='Y-m-d',###}--></span>
+</div>
+<p>
+<!--{$arc['Content']|gethtml|jiezi=0,100,'utf-8',false}--></p>
+</div>
+</li>
+</if>
+</foreach>
+
+<foreach name=":arclist(4,4)" item="arc" key="key">
+<if condition="$key gt 0">
+<li>
+<div class="news-tit-top clearfix">
+<a href="<!--{$arc['id']|idlname}-->"><!--{$arc['Title']|jiezi=0,25,'utf-8',false}--></a>
+<span><!--{$arc['endtime']|date='Y-m-d',###}--></span>
+</div>
+<p><!--{$arc['Content']|gethtml|jiezi=0,60,'utf-8',false}--></p>
+</li>
+</if>
+</foreach>
+
+            </ul>
+        </div>
+        <div class="part6-r">
+            <div class="clearfix news-top">
+                <div class="title2 fl">
+                    <span>Technical Articles</span>
+                    <h3>技术文章</h3>
+                    <i></i>
+                </div>
+                <a href="<!--{:lmurl(5)}-->" class="more1">MORE <span>></span></a>
+            </div>
+            <ul class="news-list2">
+<foreach name=":arclist(5,14)" item="arc" key="key">
+<li class="clearfix">
+<i></i>
+<a href="<!--{$arc['id']|idlname}-->"><!--{$arc['Title']|jiezi=0,25,'utf-8',false}--></a>
+<span><!--{$arc['endtime']|date='Y-m-d',###}--></span>
+</li>
+</foreach>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="part7 gary-bg">
+    <div class="container">
+        <div class="part-tit">
+            <span>Cooperative Partner</span>
+            <h3>合作伙伴</h3>
+            <i></i>
+        </div>
+        <div class="ptn-slide">
+            <div class="hd">
+                <span class="prev"></span>
+                <span class="next"></span>
+            </div>
+            <div class="bd">
+                <ul class="clearfix">
+<foreach name=":arclist(17,100)" item="arc" key="key">
+<li><a href="<!--{$arc['id']|idlname}-->"><img src="<!--{$arc['S_Image']}-->" alt="<!--{$arc['Title']}-->"></a></li>
+</foreach>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="part8">
+    <div class="container">
+        <div class="part-tit">
+            <span>Qualifications & Honours</span>
+            <h3>荣誉资质</h3>
+            <i></i>
+        </div>
+        <div class="t-c">
+            <ul class="clearfix i-b honor-list">
+               
+<foreach name=":arclist(6,4)" item="arc" key="key">
+<li>
+<div class="honor-img"><img src="<!--{$arc['S_Image']}-->" alt="<!--{$arc['Title']}-->"></div>
+<span>营业执照</span>
+</li>
+</foreach>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="part9 gary-bg">
+    <div class="container">
+        <div class="ctt-wrap">
+            <div class="ctt-tit">
+                <div>
+                    <span>Contact us</span>
+                    <h3>联系我们</h3>
+                </div>
+            </div>
+
+
+
+
+
+
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+<script type="text/javascript" src="/public/layer/layer.js"></script>
+<script src="/public/pub/validform/js/validform_v5.3.2.js"></script>
+<script src="/public/pub/validform/js/validform.js"></script>
+<script src="/public/pub/validform/js/validform_v5.3.2.js"></script>
+<script src="/public/pub/validform/js/validform.js"></script>
+<form action="/index_Index_book.php" method="post" class="form-horizontal msg-form">
+
+<div class="clearfix">
+<div class="ipt-cl">
+<div class="form-tit"><span>姓名称呼</span>Name:</div>
+<div class="ipt-txt"><input type="text" name="t1" placeholder="请输入姓名" datatype="*2-10" msg="请输入正确的姓名"></div>
+</div>
+<div class="ipt-cl">
+<div class="form-tit"><span>联系电话</span>Telephone:</div>
+<div class="ipt-txt"><input type="text" name="t2" placeholder="请输入电话" datatype="m" msg="请输入正确的电话号码"></div>
+</div>
+<div class="ipt-cl">
+<div class="form-tit"><span>邮箱地址</span>E-mail:</div>
+<div class="ipt-txt"><input type="text" placeholder="请输入您的邮箱地址" name="t3"></div>
+</div>
+</div>
+<div class="msg-area">
+<div class="form-tit"><span>在线留言</span>Message:</div>
+<div class="msg-area-bg">
+<textarea name="t4" placeholder="请输入您的留言"></textarea>
+</div>
+</div>
+<input type="submit" class="sub-btn2" value="提 交">
+</form>
+<script>
+$(".form-horizontal input").focus(function(){
+    var obj=$(this);
+    if (obj.hasClass("Validform_error"))
+    {
+        var v=obj.val();
+        var msg=obj.attr('msg');
+        var msg2=obj.attr('placeholder');
+        if (v=='')
+        {
+            layer.msg(msg2,{time:3000});
+        }
+        else
+        {
+            layer.msg(msg,{time:3000});
+        }
+    }
+});
+</script>
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<include file='index/foot' />

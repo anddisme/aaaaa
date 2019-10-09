@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>修改内容</title>
+  <link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" charset="utf-8" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+
+<include file='index/js' />
+</head>
+
+<body class="mainbody">
+
+<div class="line10"></div>
+<!--/导航栏-->
+
+
+
+<link rel="stylesheet" href="/public/bjq/themes/default/default.css" />
+<script type="text/javascript" src="/public/bjq/kindeditor-min.js"></script><!--编辑器-->
+<script type="text/javascript" src="/public/bjq/lang/zh_CN.js"></script><!--公用-->
+<script>
+  KindEditor.ready(function(K) {
+    var editor = K.editor({
+      allowFileManager : true
+    });
+
+
+      $("document").ready(function(){
+
+          $(".webshanchu").click(function(){
+              if(!confirm('请谨慎删除,确定要删除吗？')){ return false; }
+              var id = $(this).attr("id");
+              $.ajax({
+                  type: "POST",
+                  url: "/index.php/admin_Webinfo_delid",
+                  data: {id:id},
+                  success: function(data){
+                      //alert(data);return false;
+                      $('#shanchusj'+id).html('');
+                  }
+              });
+
+          })
+      });
+
+      <foreach name="infolist" item="menu">
+              <if condition="$menu['type'] eq 'images'">
+      K('#<!--{$menu['field']}-->cn').click(function() {
+          editor.loadPlugin('image', function() {
+              editor.plugin.imageDialog({
+                  imageUrl : K('#<!--{$menu['field']}-->').val(),
+                  clickFn : function(url, title, width, height, border, align) {
+                      K('#<!--{$menu['field']}-->').val(url);
+                      editor.hideDialog();
+                  }
+              });
+          });
+      });
+
+      </if>
+      </foreach>
+
+
+
+  });
+</script>
+
+
+
+
+
+
+
+
+<!--内容-->
+<div id="floatHead" class="content-tab-wrap">
+  <div class="content-tab">
+    <div class="content-tab-ul-wrap">
+      <ul>
+        <li><a href="<!--{:url('Web/index')}-->">系统配置</a></li>
+        <li><a class="selected" href="<!--{:url('Webinfo/index')}-->">网站参数</a></li>
+				<li><a  href="<!--{:url('Email/index')}-->">邮箱配置</a></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content">
+
+
+ <dl>
+      <dt>新增项目：</dt>
+      <dd>
+          <form name="form1"  method="post" action="<!--{:url('Webinfo/add')}-->"  class="form-horizontal">
+        <div id="taobaourl_a">
+          <strong>名称：</strong>
+          <input type="text" name="name" class="input normal"  style="width:100px;" />
+            <strong>字段名：</strong>
+            <input type="text" name="field" class="input normal"  style="width:100px;" />
+          <strong>类型：</strong>
+          <select name="type" class="input normal"  style="width:100px;" />
+          <option value="text">text</option>
+          <option value="textarea">textarea</option>
+          <option value="images">images</option>
+          </select>
+          
+          <input class="btn btn-primary" style="margin-left: 10px;" type="submit" value="保存" />
+    
+        </div>
+        </form>
+      </dd>
+    </dl>
+
+
+
+</div>
+
+
+
+
+<div class="tab-content">
+  <form name="form1" id="from1" method="post" action=""  class="form-horizontal">
+    <foreach name="infolist" item="menu">
+    <if condition="$menu['type'] eq 'text'">
+    <dl id="shanchusj<!--{$menu['id']}-->">
+      <dt><!--{$menu['name']}-->(<!--{$menu['field']}-->)</dt>
+      <dd>
+        <input type="text" class="input normal" style="width:50%;"  id="<!--{$menu['field']}-->" name="<!--{$menu['field']}-->"  value="<!--{$menu['val']}-->" /> <span style="color:#ccc">$web['<!--{$menu['field']}-->']</span>
+          <if condition="$menu['val'] eq ''">
+          <span style="margin-left: 20px;"><a  class="webshanchu" id="<!--{$menu['id']}-->" style="cursor: pointer;">删除</a></span>
+          </if>
+          <span class="Validform_checktip"></span>
+      </dd>
+    </dl>
+    </if>
+        <if condition="$menu['type'] eq 'images'">
+    <dl>
+      <dt><!--{$menu['name']}-->(<!--{$menu['field']}-->)</dt>
+      <dd>
+        <div id="<!--{$menu['field']}-->_a">
+          <strong></strong><input  type="text" name="<!--{$menu['field']}-->" class="input normal" id="<!--{$menu['field']}-->" rel="<!--{$menu['field']}-->" style="width:200px;" value="<!--{$menu['val']}-->"> <input class="btn btn-primary" type="button" id="<!--{$menu['field']}-->cn" value="上传图片" /> 
+          <font  style="color:#27a9e3; display:none;" class="picshow" rel="<!--{$links.S_Image}-->">[预览]</font>
+        </div>
+        <script>
+          setInterval('imgchange("<!--{$menu['field']}-->")',1000);
+        </script>
+      </dd>
+    </dl>
+
+
+
+    </if>
+
+        <if condition="$menu['type'] eq 'textarea'">
+<dl>
+<dt><!--{$menu['name']}-->(<!--{$menu['field']}-->)</dt>
+<dd>
+<label for="textarea"></label>
+<textarea name="<!--{$menu['field']}-->" id="<!--{$menu['field']}-->" cols="45" rows="5" class="input normal" style="width:65%;"><!--{$menu['val']}--></textarea>  <span style="color:#ccc">$web['<!--{$menu['field']}-->']</span>
+</dd>
+</dl>
+</if>
+
+   </foreach>
+
+
+</div>
+
+
+
+<!--/内容-->
+
+<!--工具栏-->
+<div class="page-footer">
+  <div class="btn-wrap">
+
+    <input type="submit" name="btnSubmit" value="提交保存" id="btnSubmit" class="btn" />
+    <input name="btnReturn" type="button" value="返回上一页" class="btn yellow" onClick="javascript:history.back(-1);" />
+  </div>
+</div>
+<!--/工具栏-->
+
+</form>
+<include file='index/foot' />
+</body>
+</html>

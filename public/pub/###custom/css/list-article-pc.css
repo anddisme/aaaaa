@@ -1,0 +1,59 @@
+.nav-category-bg{
+	background:rgba(255,255,255,0.8) !important;filter:Alpha(opacity=80) !important;; 
+} 
+#main{
+	margin: 30px 0;
+	padding: 0 0 50px 0;
+	min-height: 1px;height: auto;overflow: hidden;
+	position: relative;
+	background-color: #fff;
+}
+#main .sidebar{
+	display: block;float: left;
+	width: 200px;min-height: 1px;height: auto;overflow: hidden;
+	border:1px solid #ddd;
+}
+h2.sidebar-tile{
+    height:50px; line-height: 50px;
+	font-size: 20px; text-align: center;
+}
+ul.sidebar-nav{
+	min-height: 1px;height: auto;overflow: hidden;
+}
+ul.sidebar-nav > li{
+    border-top: 1px solid #ddd;
+}
+ul.sidebar-nav > li a{
+	display: block;
+	height: 38px;line-height: 38px;
+	text-align: center;
+	font-size: 14px;
+}
+ul.sidebar-nav > li a:hover,
+ul.sidebar-nav > li a:focus,
+ul.sidebar-nav > li a.active{
+	background-color: #00adef;
+    color: #fff;
+}
+#main .list{
+	display: block;float: left;
+	width: 1008px;min-height: 640px;height: auto;overflow: hidden;
+	padding: 0 20px;
+}
+h2.list-tile{
+    height:52px; line-height: 52px;
+	font-size: 20px;
+	border-bottom: 1px solid #ddd;
+}
+ol.list-cont{
+	min-height: 1px;height: auto;overflow: hidden;
+}
+ol.list-cont > li.cont{
+	padding: 10px 0 20px; 
+	width: 100%;min-height: 1px;height: auto;overflow: hidden;
+	border-bottom: 1px dashed #ddd;
+}
+ol.list-cont > li.title{
+	height: 46px;line-height: 46px;
+	font-size: 16px; font-weight: 400; color: #00adef;
+}

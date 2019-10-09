@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit">
+<php>
+$webinfo=webinfo();
+</php>
+<title><!--{$webinfo['Web_Name']}--> | 管理系统</title>
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/public/skin/scripts/cms.js"></script>
+</head>
+
+<body class="indexbody">
+<div style="width:100%; height:auto; min-width:1200px;">
+<!--全局菜单-->
+<a class="btn-paograms"  onclick="$('#pop-menu').show()"></a>
+<div id="pop-menu" class="pop-menu" style="display:none;">
+<div class="pop-box" style="height: 235px;">
+<h1 class="title"><i></i>快捷菜单</h1>
+<i class="close" onClick="$('#pop-menu').hide()">关闭</i>
+<div class="list-box" tabindex="5000" style="overflow: hidden; outline: none;">
+<div class="list-group1" style="height:360px; width:90px;">
+<h1 title="内容"><img src="/public/skin/default/nav/home.png"></h1>
+<div class="list-wrap">
+<ul>
+
+<li>
+<a navid="55" href="<!--{:url('Article/index')}-->" target="mainframe">
+<span>内容管理</span>
+</a>
+</li>
+
+<li>
+<a navid="55" href="<!--{:url('Lm/index')}-->" target="mainframe">
+<span>栏目管理</span>
+</a>
+</li>
+
+<li>
+<a navid="55" href="<!--{:url('Sql/index')}-->" target="mainframe">
+<span>数据备份</span>
+</a>
+</li>
+
+<li>
+<a navid="55" href="<!--{:url('Links/index')}-->" target="mainframe">
+<span>友情链接</span>
+</a>
+</li>
+
+
+<li>
+<a navid="55" href="<!--{:url('Html/index')}-->" target="mainframe">
+<span>广告管理</span>
+</a>
+</li>
+
+<li>
+<a navid="55" href="<!--{:url('Web/index')}-->" target="mainframe">
+<span>系统设置</span>
+</a>
+</li>
+
+
+</ul>
+</div></div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+<i class="arrow">箭头</i>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="main-top">
+<a class="icon-menu"></a>
+<div id="main-nav" class="main-nav">
+<a class="selected" href="<!--{:url('Article/index')}-->" target="mainframe">内容</a>
+<a href="<!--{:url('Web/index')}-->" target="mainframe">设置</a>
+<a>广告</a>
+<a>账户</a>
+<a href="<!--{:url('Guest/index')}-->" target="mainframe">留言</a>
+<a class="">更新</a>
+<a href="<!--{:url('Loglist/index')}-->" rel="home"  target="mainframe">日志</a>
+<a href="<!--{:url('Sql/index')}-->" rel="home"  target="mainframe">备份</a>
+
+<a href="/" rel="home" target="_blank">预览首页</a>
+</div>
+<div class="nav-right">
+<div class="info">
+<i></i>
+<span>
+上午好，<!--{$admin['UserName']}-->
+
+</span>
+</div>
+<div class="option">
+<i></i>
+<div class="drop-wrap">
+<div class="arrow"></div>
+<ul class="item">
+<li><a href="/" target="_blank">预览网站</a></li>
+<li><a id="lbtnExit" target="mainframe" href="<!--{:url('User/xgmm')}-->">修改密码</a></li>
+<li><a id="lbtnExit1" href="<!--{:url('Login/logout')}-->" onClick="return confirm('确定要退出系统吗？');">注销登录</a></li>
+<li><a id="lbtnExit11" target="mainframe" href="<!--{:url('Qqlogin/index')}-->" onClick="return confirm('确定要绑定qq吗?');">绑定qq</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+  
+  
+  
+  
+  
+<div class="main-left">
+<h1 class="logo"></h1>
+<div id="sidebar-nav" class="sidebar-nav">
+<!--------------left menu s------------------------------------------------->
+<!--------------left menu s------------------------------------------------->
+<!--------------left menu s------------------------------------------------->
+
+<div class="list-group" style="display: block;">
+<h1 title="内容管理"><img src="/public/skin/default/nav/home.png"></h1>
+<div class="list-wrap">
+<h2>内容管理<i></i></h2>
+<php>
+$caidan=caidan(0);
+</php>
+<foreach name="caidan" item="cd">
+<php>
+$caidan1=caidan($cd['id']);
+//print_r($caidan1);
+//print_r($caidan1)."=pppttt";
+$caidan1num=array_count_values($caidan1);
+</php>
+<ul style="display: block;">
+<li>
+<a target="mainframe" href="<!--{:url('Article/index',array('TypeID'=>$cd['id']))}-->">
+
+<i class="icon  <if condition="is_array($caidan1)">folder<else />file</if>"></i><span><!--{$cd['TypeName']}--></span>
+<if condition="is_array($caidan1)">
+<b class="expandable close"></b>
+</if>
+</a>
+    <ul style="display: none;">
+    <foreach name="caidan1" item="cd1">
+    <php>
+    $caidan2=caidan($cd1['id']);
+    </php>
+    <li>
+    <a href="<!--{:url('Article/index',array('TypeID'=>$cd1['id']))}-->" target="mainframe">
+    <i class="icon"></i><i class="icon <if condition="is_array($caidan2)">folder<else />file</if>"></i><span><!--{$cd1['TypeName']}--></span>
+    <if condition="is_array($caidan2)">
+    <b class="expandable close"></b>
+    </if>
+    </a>
+        <ul style="display: none;">
+        <foreach name="caidan2" item="cd2">
+        <php>
+        $caidan3=caidan($cd2['id']);
+        </php>
+        <li>
+        <a href="<!--{:url('Article/index',array('TypeID'=>$cd2['id']))}-->" target="mainframe">
+        <i class="icon"></i><i class="icon <if condition="is_array($caidan3)">folder<else />file</if>"></i><span><!--{$cd2['TypeName']}--></span>
+        <if condition="count($caidan3) gt 0">
+        <b class="expandable close"></b>
+        </if>
+        </a>
+        </li>
+        </foreach>
+        </ul>
+    </li>
+    </foreach>
+    </ul>
+</li>
+</ul>
+</foreach>
+
+</div>
+</div>
+<!-------menu2-------->
+<div class="list-group" style="display: none;">
+<h1 title="设置中心"><img src="/public/skin/default/nav/home.png"></h1>
+<div class="list-wrap">
+<h2>设置中心<i></i></h2>
+
+<ul style="display: block;">
+<li>
+<a href="<!--{:url('Web/index')}-->" target="mainframe">
+<i class="icon folder"></i><span>系统配置</span>
+</a>
+</li>
+    <li>
+        <a href="<!--{:url('Webinfo/index')}-->" target="mainframe">
+            <i class="icon folder"></i><span>网站参数</span>
+        </a>
+    </li>
+    
+<li>
+<a  href="<!--{:url('lm/index')}-->" target="mainframe">
+<i class="icon folder"></i><span>栏目管理</span>
+</a>
+</li>
+    <li style="display: none;">
+        <a  href="<!--{:url('Screen/index')}-->" target="mainframe">
+            <i class="icon folder"></i><span>筛选管理</span>
+        </a>
+    </li>
+
+
+<li>
+<a target="mainframe" href="<!--{:url('Sql/index')}-->">
+<i class="icon folder"></i><span>数据备份</span>
+</a>
+</li>
+
+<li>
+<a href="<!--{:url('Temp/index')}-->" target="mainframe">
+    <i class="icon folder"></i><span>文件管理</span>
+</a>
+</li>
+
+  <li>
+    <a href="<!--{:url('Prosx/index')}-->" target="mainframe">
+      <i class="icon folder"></i><span>商品属性管理</span>
+    </a>
+  </li>
+
+
+<li>
+<a href="<!--{:url('Sitemap/index')}-->" target="mainframe">
+    <i class="icon folder"></i><span>生成地图</span>
+</a>
+</li>
+
+<li>
+<a href="<!--{:url('Loglist/index')}-->" target="mainframe">
+    <i class="icon folder"></i><span>系统日志</span>
+</a>
+</li>
+
+
+<li>
+<a href="<!--{:url('City/index')}-->" target="mainframe">
+    <i class="icon folder"></i><span>城市管理</span>
+</a>
+</li>
+
+<li>
+<a  href="<!--{:url('Article/hsz')}-->" target="mainframe">
+<i class="icon folder"></i><span>文档回收站</span>
+</a>
+</li>
+
+
+</ul>
+</div>
+</div>
+
+<!-------menu2-------->
+<div class="list-group" style="display: none;">
+<h1 title="广告"><img src="/public/skin/default/nav/home.png"></h1>
+<div class="list-wrap">
+<h2>广告管理<i></i></h2>
+
+<ul style="display: block;">
+<li>
+<a href="<!--{:url('Links/index')}-->" target="mainframe">
+<i class="icon folder"></i><span>友情链接</span>
+</a>
+</li>
+<li>
+<a href="<!--{:url('Kf/index')}-->" target="mainframe">
+<i class="icon folder"></i><span>在线客服</span>
+</a>
+</li>
+<li>
+<a href="<!--{:url('Ad/index')}-->" target="mainframe">
+<i class="icon folder"></i><span>广告位</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+
+
+<!-------menu2-------->
+<div class="list-group" style="display: none;">
+<h1 title="账户管理"><img src="/public/skin/default/nav/home.png"></h1>
+<div class="list-wrap">
+<h2>账户管理<i></i></h2>
+
+<ul style="display: block;">
+<li>
+<a href="<!--{:url('User/index')}-->" target="mainframe">
+<i class="icon folder"></i><span>系统用户</span>
+</a>
+</li>
+<li>
+<a href="<!--{:url('Member/index')}-->" target="mainframe">
+<i class="icon folder"></i><span>注册会员</span>
+</a>
+</li>
+
+</ul>
+</div>
+</div>
+
+
+
+
+<!-------menu2-------->
+<div class="list-group" style="display: none;">
+<h1 title="留言"><img src="/public/skin/default/nav/home.png"></h1>
+<div class="list-wrap">
+<h2>留言管理<i></i></h2>
+
+<ul style="display: block;">
+<li>
+<a href="<!--{:url('Guest/index')}-->" target="mainframe">
+<i class="icon folder"></i><span>留言管理</span>
+</a>
+</li>
+
+
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+<!-------menu2-------->
+<div class="list-group" style="display: none;">
+<h1 title="更新"><img src="/public/skin/default/nav/home.png"></h1>
+<div class="list-wrap">
+<h2>内容更新<i></i></h2>
+
+<ul style="display: block;">
+<li>
+<a target="mainframe" href="<!--{:url('Html/index')}-->">
+<i class="icon folder"></i><span>生成html</span>
+</a>
+</li>
+
+<li>
+<a target="mainframe" href="<!--{:url('Web/delcache')}-->">
+<i class="icon folder"></i><span>更新缓存</span>
+</a>
+</li>
+
+
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+
+<!--------------left menu e------------------------------------------------->
+<!--------------left menu e------------------------------------------------->
+<!--------------left menu e------------------------------------------------->
+</div>
+</div>
+  
+  
+  <div class="main-container">
+    <iframe id="mainframe" name="mainframe" frameborder="0" src="<!--{:url('index/main')}-->"></iframe>
+  </div>
+</div>
+</body>
+</html>

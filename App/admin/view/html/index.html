@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>信息管理</title>
+<link href="/public/skin/scripts/artdialog/ui-dialog.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/css/pagination.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<include file="index/js" />
+</head>
+
+<body class="mainbody">
+
+
+<div class="location">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('Index/main')}-->" class="home"><i></i><span>首页</span></a>
+  
+  <i class="arrow"></i>
+  <span><a>生成html</a></span>
+
+
+
+
+
+</div>
+<!--/工具栏-->
+
+<!--列表-->
+<div class="table-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="e7e7e7" align="center" style="margin-top:20px">
+
+<script>
+function sctype(type)
+{
+//alert(type);
+  if(type==''){ return false; }
+  if(type=='lm'){ }
+  $("#type").val(type); 
+  $("#scbdk").submit();
+}
+</script>
+
+<tr align='center' height="22" >
+<td height="36" colspan="2" align="left">
+  <form action="<!--{:url('Html/index')}-->" method="post" id="scbdk" target="htmlfrom">
+  <input type="hidden" name="m" value="Html"/>
+  <input type="hidden" name="type" id="type" value=""/>
+<div style="float:left; width:100%; height:30px; line-height:30px; font-size:12px;">
+<script type="text/javascript"> 
+$(function() { 
+	$("#selectall").click(function() { 
+		$("#selectk").find('option').attr('selected','selected');
+	}); 
+	$("#selectall1").click(function() { 
+		$("#selectk").find('option').attr('selected',false);
+	}); 
+	
+}); 
+</script> 
+<a href="javascript:;" id="selectall" style="padding-left:10px;"><strong>全选</strong></a>
+/<a href="javascript:;" id="selectall1" style="padding-left:5px;"><strong>全不选</strong></a>
+<span style="padding-left:10px; color:#999;"><strong>按CTRL/SHIFT多选</strong>（请选择需要更新的栏目后，点击生成按钮开始更新）</span>
+</div>
+  <select id="selectk" name="idlist[]" multiple=”multiple” class="form-control" style="width:100%; border:1px solid #CCC; margin-bottom:20px; height:300px; font-size:15px; color:#333; padding-left:10px; padding-top:10px; line-height:20px;">
+  <!--{:categoryTree(0,$TypeID)}-->
+  </select>
+ 
+ <div style="float:left; padding-left:10px; padding-bottom:10px; font-size:14px;">
+  <input name="tpl" type="radio" checked="checked" value="Index">PC版
+  <div style="display:none;">
+  <input name="tpl" type="radio" value="m">移动版
+  </div>
+    <button id="btn_sub" onClick="return sctype('home');" type="button" class="btn btn-primary">生成首页</button>
+    <button id="btn_sub" onClick="return sctype('lm');" type="button" class="btn btn-primary">生成栏目</button>
+    <button id="btn_sub" onClick="return sctype('wz');" type="button" class="btn btn-primary">生成文挡</button>
+    <button id="btn_sub" onClick="return sctype('all');" type="button" class="btn btn-primary">一键更新</button>
+ </div>
+ 
+ 
+    </form></td>
+</tr>
+
+
+<tr align='center' bgcolor="#FFFFFF" height="22" >
+<td height="36" colspan="2" align="right" style="padding-left:10px; padding-top:20px;">
+  <iframe frameborder="0" name="htmlfrom" id="htmlfrom" style=" width:100%; border:none; height:450px;" src=""></iframe></td>
+</tr>
+
+
+
+  
+   <tr class="no">
+      <td colspan="2" align="center">	   </td>
+    </tr>
+  
+  
+
+
+<td width="100"></form>
+</table>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+<!--/列表-->
+
+
+
+</body>
+
+</html>

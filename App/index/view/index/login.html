@@ -1,0 +1,60 @@
+<include file="index:head" />
+<div class="blue-bd"></div>
+<div class="login-bg white-bg">
+    <div class="container">
+        <div class="login-wrap">
+            <link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+            <script type="text/javascript" src="/public/layer/layer.js"></script>
+            <script src="/public/pub/validform/js/validform_v5.3.2.js"></script>
+            <script src="/public/pub/validform/js/validform.js"></script>
+            <script src="/public/pub/validform/js/validform_v5.3.2.js"></script>
+            <script src="/public/pub/validform/js/validform.js"></script>
+            <form action="/index.php/index_Login_login" method="post" class="form-horizontal== login-form">
+                <div class="t-c">
+                    <div class="login-tit i-b">
+                        <img src="/s/images/logo3.png" alt="人人帮线索系统"><span>人人帮线索系统</span>
+                    </div>
+                </div>
+                <input type="text" name="username" datatype="*4-15" msg="请输入正确的用户名" placeholder="请输入账号">
+                <input type="password" name="password" datatype="*4-100" msg="请输入正确的密码" placeholder="请输入密码">
+                <div class="clearfix">
+                    <input type="text" name="CheckCode" id="CheckCode" placeholder="输入验证码" class="yzm-inp">
+                    <div class="yzm"><img src="<!--{:url('Login/showcaptcha')}-->" alt="图片看不清？点击重新得到验证码" onclick="this.src='<!--{:url("Login/showcaptcha")}-->?'+Math.random()"></div>
+                </div>
+                <div class="reafor clearfix">
+                    <div class="rmb"><input type="checkbox" placeholder=""><span>记住密码</span></div>
+                    <a href="#" class="fgt">忘记密码</a>
+                </div>
+                <input type="submit" value="登 录" class="login-btn">
+
+                <p>还不是会员？<a href="<!--{:url('Login/reg')}-->">立即注册</a></p>
+            </form>
+            <script>
+                $(".form-horizontal input").focus(function(){
+                    var obj=$(this);
+                    if (obj.hasClass("Validform_error"))
+                    {
+                        var v=obj.val();
+                        var msg=obj.attr('msg');
+                        var msg2=obj.attr('placeholder');
+                        if (v=='')
+                        {
+                            layer.msg(msg2,{time:3000});
+                        }
+                        else
+                        {
+                            layer.msg(msg,{time:3000});
+                        }
+                    }
+                });
+            </script>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<include file="index:foot" />

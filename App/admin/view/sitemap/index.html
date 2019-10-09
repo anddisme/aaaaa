@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>信息管理</title>
+<link href="/public/skin/scripts/artdialog/ui-dialog.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/css/pagination.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<include file="index/js" />
+</head>
+
+<body class="mainbody">
+
+
+<div class="location">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('Index/main')}-->" class="home"><i></i><span>首页</span></a>
+  
+  <i class="arrow"></i>
+  <span><a>生成网站地图</a></span>
+
+
+
+
+
+</div>
+<!--/工具栏-->
+
+<!--列表-->
+<div class="table-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="e7e7e7" align="center" style="margin-top:20px">
+
+<tr align='center' height="22" >
+<td height="36" colspan="2" align="left">
+  <form action="<!--{:url('Sitemap/make')}-->" method="post" id="scbdk" target="htmlfrom">
+<div style="float:left; width:100%; height:30px; line-height:30px; font-size:12px;">
+<script type="text/javascript"> 
+$(function() { 
+	$("#selectall").click(function() { 
+		$("#selectk").find('option').attr('selected','selected');
+	}); 
+	$("#selectall1").click(function() { 
+		$("#selectk").find('option').attr('selected',false);
+	}); 
+	
+}); 
+</script> 
+<a href="javascript:;" id="selectall" style="padding-left:10px;"><strong>全选</strong></a>
+/<a href="javascript:;" id="selectall1" style="padding-left:5px;"><strong>全不选</strong></a>
+<span style="padding-left:10px;">(按CTRL/SHIFT多选)</span>
+</div>
+  <select id="selectk" name="sitemap[]" multiple=”multiple” class="form-control" style="width:100%; border:1px solid #CCC; margin-bottom:20px; height:100px; font-size:15px; color:#333; padding-left:10px; padding-top:10px; line-height:20px;">
+  <option value="xml">sitemap.xml</option>
+  <option value="txt">sitemap.txt</option>
+  <option value="html">sitemap.html</option>
+  </select>
+ 
+ <div style="float:left; padding-left:10px; padding-bottom:10px; font-size:14px;">
+  <div style="color:red; padding-bottom:20px;">
+ *注意：一旦开始生成，就会覆盖之前生成的sitemap文件
+  </div>
+    <button id="btn_sub" onClick="return scsitemap();" type="submit" class="btn btn-primary">开始生成</button>
+
+ </div>
+ 
+ 
+    </form></td>
+</tr>
+
+
+<tr align='center' bgcolor="#FFFFFF" height="22" >
+<td height="36" colspan="2" align="right" style="padding-left:10px; padding-top:20px;">
+  <iframe frameborder="0" name="htmlfrom" id="htmlfrom" style=" width:100%; border:none; height:450px;" src=""></iframe></td>
+</tr>
+
+
+
+  
+   <tr class="no">
+      <td colspan="2" align="center">	   </td>
+    </tr>
+  
+  
+
+
+<td width="100"></form>
+</table>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+<!--/列表-->
+
+
+
+</body>
+
+</html>

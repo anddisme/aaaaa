@@ -1,0 +1,27 @@
+<include file='index/head' />
+<div class="container in-wrap">
+<div class="crumbs">
+<a href="/">首页</a> <!--{$pathmenu}-->
+</div>
+<div class="t-c erji2">
+<ul class="i-b">
+<foreach name=":caidan($blm,100)" item="cd">
+<li <if condition="$TypeID eq $cd['id']">class="on"</if>><a href="<!--{$cd['id']|lmurl}-->"><!--{$cd['TypeName']}--></a></li>
+</foreach>
+</ul>
+</div>
+<div class="dt-wrap">
+<div class="dt-tit">
+<h3><!--{$article['Title']}--></h3>
+<i></i>
+</div>
+<div class="dt-txt">
+<!--{$article['Content']}-->
+</div>
+<div class="flip clearfix">
+<!--{$nex}-->
+</div>
+</div>
+</div>
+</div>
+<include file='index/foot' />

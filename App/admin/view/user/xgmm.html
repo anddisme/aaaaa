@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>修改内容</title>
+<script type="text/javascript" charset="utf-8" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+<include file='index/js' />
+
+
+</head>
+
+<body class="mainbody">
+
+
+
+<div class="location">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('Index/main')}-->" class="home" target="mainframe"><i></i><span>首页</span></a>
+  
+  <i class="arrow"></i>
+  <span><a><!--{$type}-->账号</a></span>
+ 
+</div>
+<div class="line10"></div>
+<!--/导航栏-->
+
+
+
+
+
+
+
+<!--内容-->
+<div id="floatHead" class="content-tab-wrap">
+  <div class="content-tab">
+    <div class="content-tab-ul-wrap">
+      <ul>
+        <li><a class="selected" href="javascript:;">基本信息</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content">
+<form name="form1" id="from1" method="post" action=""  class="form-horizontal">
+
+
+
+
+<dl>
+<dt>用户名</dt>
+<dd>
+<input type="text" readonly="readonly" name="UserName" class="input normal" datatype='*1-10' id="UserName"  value="<!--{$links.UserName}-->">
+</dd>
+</dl>
+
+<dl>
+<dt>真实名</dt>
+<dd>
+<input type="text" name="RealName" class="input normal" datatype='*1-10' id="RealName"  value="<!--{$links.RealName}-->">
+</dd>
+</dl>
+
+<dl>
+<dt>密码</dt>
+<dd>
+<input type="text" name="PassWord" class="input normal" id="PassWord"  value="">
+<span>不修改密码，则不用填写</span>
+</dd>
+</dl>
+
+
+
+<dl style="display:none;">
+<dt>账号状态</dt>
+<dd>
+  <input name="isVerify" type="radio" value="1" <if condition="$links.isVerify eq '1'"> checked="checked"</if><if condition="$arr.isVerify eq ''"> checked="checked"</if> />
+  启用<input name="isVerify" type="radio" value="0" <if condition="$links.isVerify eq '0'"> checked="checked"</if> />
+禁用</dd>
+</dl>
+
+  
+
+</div>
+
+
+
+<!--/内容-->
+
+<!--工具栏-->
+<div class="page-footer">
+  <div class="btn-wrap">
+
+    <input type="submit" name="btnSubmit" value="提交保存" id="btnSubmit" class="btn" />
+    <input name="btnReturn" type="button" value="返回上一页" class="btn yellow" onClick="javascript:history.back(-1);" />
+  </div>
+</div>
+<!--/工具栏-->
+
+  </form>
+  
+<include file='index/foot' />
+
+</body>
+</html>

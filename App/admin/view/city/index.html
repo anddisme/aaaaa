@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>信息管理</title>
+<link href="/public/skin/scripts/artdialog/ui-dialog.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/css/pagination.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<include file="index/js" />
+</head>
+<body class="mainbody">
+<form id="form1" name="form1" method="post" action=""  class="form-horizontal">
+<input type="hidden" id="ActionIDList" name="ActionIDList" />
+<input type="hidden" id="Action" name="Action" />
+<input type="hidden" id="table" name="table" value="city" />
+<input type="hidden" id="backurl" name="backurl" value="__URL__" />
+
+<div class="location">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('City/index')}-->" class="home" target="mainframe"><i></i><span>首页</span></a>
+  
+  <i class="arrow"></i>
+  <span><a  href="<!--{:url('City/index')}-->" >城市管理</a></span>
+  
+  <if condition="$parr['id'] gt 0">
+   <i class="arrow"></i>
+  <span><a><!--{$parr['cityname']}--></a></span>
+  </if>
+
+</div>
+<!--/导航栏-->
+<!--工具栏-->
+<div id="floatHead" class="toolbar-wrap">
+<div class="toolbar" style="float:left; width:100%; ">
+<script>
+function tos()
+{
+  if($("#kw").val()=='')
+  {
+    //show_('请输入搜索关键词');
+	//return false;
+  }
+  window.location='<!--{:url("City/index")}-->?kw='+$("#kw").val();
+}
+</script>
+<div style="float:left; height:auto;  font-size:12px; color:#999;">
+搜索：<input type="text" name="" class="input normal" style="text-indent:0px; width:200px" id="kw" value="<!--{:get('kw')}-->">
+<input class="btn btn-primary" type="button" onClick="return tos()" value="搜 索">
+</div>
+
+
+<div class="box-wrap" style="float:right; width:auto;">
+
+<div class="l-list">
+
+<ul class="icon-list">
+  <li><a class="add" onClick="return typeidisnull()" href="<!--{:url('City/add')}-->?pid=<!--{$parr['id']}-->"><i></i><span>新增广告</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<!--/工具栏-->
+
+<!--列表-->
+<div class="table-container">
+  
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
+    <tr>
+      <th width="11%">ID</th>
+      <th align="left" width="37%">城市名称</th>
+      <th width="23%">绑定主机</th>
+      <th width="16%">更新时间</th>
+      <th width="13%">操作</th>
+    </tr>
+  
+   
+  
+
+<foreach name="list" item="arr">
+<tr id="<!--{$arr['id']}-->">
+<td align="center">
+<span class="checkall">
+<input type="checkbox" id="IDList" name="IDList" style="border:n0" value="<!--{$arr.id}-->" /> 
+</span>
+<!--{$arr.id}-->
+
+</td>
+<td>
+<!--{$arr.cityname}--> 
+</td>
+
+<td align="center"><!--{$arr.host}--></td>
+<td align="center"><!--{$arr.endtime}--></td>
+<td align="center">
+<a href="<!--{:url('City/index',array('pid'=>$arr['id']))}-->">下级</a> 
+<a href="<!--{:url('City/updata',array('id'=>$arr['id']))}-->">修改</a> <a onClick="return delid('<!--{$arr[id]}-->','city')" href="javascript:;">删除</a>
+</td>
+</tr>
+</foreach>
+    
+  </table>
+  <div class="toolbar" style="float:left;">
+<div class="box-wrap">
+<a class="menu-btn"></a>
+<div class="l-list">
+<ul class="icon-list">
+<label class="foot-label">
+<input type="checkbox" style="border:1px solid #ccc" id="cbSelectAll" name="cbSelectAll" value="checkbox" onClick="mySelectAll()" />
+全选</label>
+<button class="btn btn-primary" onClick="return myAction('DelSome')">&nbsp;选中删除&nbsp;</button>
+</ul>
+</div>
+</div>
+</div>
+<!--{$fenye}-->
+<div class="paging" style="color:#666; text-align:right;">
+<select style="border:1px solid #f5f5f5; color:#666;" onChange="location='?PageSize='+this.value">
+<!--{:pagesize($PageSize)}-->
+</select>  
+ </div>
+</div>
+</form>
+</body>
+</html>

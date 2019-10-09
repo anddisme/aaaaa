@@ -1,0 +1,521 @@
+.progressWrapper {
+	width: 357px;
+	overflow: hidden;
+}
+
+.progressContainer {
+	margin: 5px;
+	padding: 4px;
+	border: solid 1px #E8E8E8;
+	background-color: #F7F7F7;
+	overflow: hidden;
+}
+/* Message */
+.message {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;
+}
+/* Error */
+.red {
+	border: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+
+/* Current */
+.green {
+	border: solid 1px #DDF0DD;
+	background-color: #EBFFEB;
+}
+
+/* Complete */
+.blue {
+	border: solid 1px #CEE2F2;
+	background-color: #F0F5FF;
+}
+
+.progressName {
+	font-size: 8pt;
+	font-weight: 700;
+	color: #555;
+	width: 323px;
+	height: 14px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {
+	font-size: 0;
+	width: 0%;
+	height: 2px;
+	background-color: blue;
+	margin-top: 2px;
+}
+
+.progressBarComplete {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+.progressBarError {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+.progressBarStatus {
+	margin-top: 2px;
+	width: 337px;
+	font-size: 7pt;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap;
+}
+
+a.progressCancel {
+	font-size: 0;
+	display: block;
+	height: 14px;
+	width: 14px;
+	background-image: url(../images/cancelbutton.gif);
+	background-repeat: no-repeat;
+	background-position: -14px 0px;
+	float: right;
+}
+
+a.progressCancel:hover {
+	background-position: 0px 0px;
+}
+
+#thumbnails ul li{float:left;list-style-type:none;width:105px;margin-left:5px;}
+#thumbnails .button{display:block;position: relative;right:-84px;top: -118px;width: 30px;z-index: 1103;cursor:pointer;}
+#pic_list li{padding:0 0 0 5px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.progressWrapper1 {
+	width: 357px;
+	overflow: hidden;
+}
+
+.progressContainer1 {
+	margin: 5px;
+	padding: 4px;
+	border: solid 1px #E8E8E8;
+	background-color: #F7F7F7;
+	overflow: hidden;
+}
+/* message1 */
+.message1 {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;
+}
+/* Error */
+.red {
+	border: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+
+/* Current */
+.green {
+	border: solid 1px #DDF0DD;
+	background-color: #EBFFEB;
+}
+
+/* Complete */
+.blue {
+	border: solid 1px #CEE2F2;
+	background-color: #F0F5FF;
+}
+
+.progressName1 {
+	font-size: 8pt;
+	font-weight: 700;
+	color: #555;
+	width: 323px;
+	height: 14px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.progressBarInProgress1,
+.progressBarComplete1,
+.progressBarError1 {
+	font-size: 0;
+	width: 0%;
+	height: 2px;
+	background-color: blue;
+	margin-top: 2px;
+}
+
+.progressBarComplete1 {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+.progressBarError {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+.progressBarStatus1 {
+	margin-top: 2px;
+	width: 337px;
+	font-size: 7pt;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap;
+}
+
+a.progressCancel1 {
+	font-size: 0;
+	display: block;
+	height: 14px;
+	width: 14px;
+	background-image: url(../images/cancelbutton.gif);
+	background-repeat: no-repeat;
+	background-position: -14px 0px;
+	float: right;
+}
+
+a.progressCancel1:hover {
+	background-position: 0px 0px;
+}
+
+#thumbnails1 ul li{float:left;list-style-type:none;width:105px;margin-left:5px;}
+#thumbnails1 .button{display:block;position: relative;right:-84px;top: -118px;width: 30px;z-index: 1103;cursor:pointer;}
+#pic_list1 li{padding:0 0 0 5px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.progressWrapper2 {
+	width: 357px;
+	overflow: hidden;
+}
+
+.progressContainer2 {
+	margin: 5px;
+	padding: 4px;
+	border: solid 1px #E8E8E8;
+	background-color: #F7F7F7;
+	overflow: hidden;
+}
+/* message1 */
+.message2 {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;
+}
+
+
+.progressName2 {
+	font-size: 8pt;
+	font-weight: 700;
+	color: #555;
+	width: 323px;
+	height: 14px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.progressBarInProgress2,
+.progressBarComplete2,
+.progressBarError2 {
+	font-size: 0;
+	width: 0%;
+	height: 2px;
+	background-color: blue;
+	margin-top: 2px;
+}
+
+.progressBarComplete2 {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+.progressBarError2 {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+.progressBarStatus2 {
+	margin-top: 2px;
+	width: 337px;
+	font-size: 7pt;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap;
+}
+
+a.progressCancel2 {
+	font-size: 0;
+	display: block;
+	height: 14px;
+	width: 14px;
+	background-image: url(../images/cancelbutton.gif);
+	background-repeat: no-repeat;
+	background-position: -14px 0px;
+	float: right;
+}
+
+a.progressCancel2:hover {
+	background-position: 0px 0px;
+}
+
+#thumbnails2 ul li{float:left;list-style-type:none;width:105px;margin-left:5px;}
+#thumbnails2 .button{display:block;position: relative;right:-84px;top: -118px;width: 30px;z-index: 1103;cursor:pointer;}
+#pic_list2 li{padding:0 0 0 5px;}
+
+
+
+
+
+
+
+
+
+
+
+.progressWrapper3 {
+	width: 357px;
+	overflow: hidden;
+}
+
+.progressContainer3 {
+	margin: 5px;
+	padding: 4px;
+	border: solid 1px #E8E8E8;
+	background-color: #F7F7F7;
+	overflow: hidden;
+}
+/* message1 */
+.message3 {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;
+}
+
+
+.progressName3 {
+	font-size: 8pt;
+	font-weight: 700;
+	color: #555;
+	width: 323px;
+	height: 14px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.progressBarInProgress3,
+.progressBarComplete3,
+.progressBarError3 {
+	font-size: 0;
+	width: 0%;
+	height: 2px;
+	background-color: blue;
+	margin-top: 2px;
+}
+
+.progressBarComplete3 {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+.progressBarError3 {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+.progressBarStatus3 {
+	margin-top: 2px;
+	width: 337px;
+	font-size: 7pt;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap;
+}
+
+a.progressCancel3 {
+	font-size: 0;
+	display: block;
+	height: 14px;
+	width: 14px;
+	background-image: url(../images/cancelbutton.gif);
+	background-repeat: no-repeat;
+	background-position: -14px 0px;
+	float: right;
+}
+
+a.progressCancel3:hover {
+	background-position: 0px 0px;
+}
+
+#thumbnails3 ul li{float:left;list-style-type:none;width:105px;margin-left:5px;}
+#thumbnails3 .button{display:block;position: relative;right:-84px;top: -118px;width: 30px;z-index: 1103;cursor:pointer;}
+#pic_list3 li{padding:0 0 0 5px;}
+
+
+
+
+
+
+
+
+
+.progressWrapper4 {
+	width: 357px;
+	overflow: hidden;
+}
+
+.progressContainer4 {
+	margin: 5px;
+	padding: 4px;
+	border: solid 1px #E8E8E8;
+	background-color: #F7F7F7;
+	overflow: hidden;
+}
+/* message1 */
+.message4 {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;
+}
+
+
+.progressName4 {
+	font-size: 8pt;
+	font-weight: 700;
+	color: #555;
+	width: 323px;
+	height: 14px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.progressBarInProgress4,
+.progressBarComplete4,
+.progressBarError4 {
+	font-size: 0;
+	width: 0%;
+	height: 2px;
+	background-color: blue;
+	margin-top: 2px;
+}
+
+.progressBarComplete4 {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+.progressBarError4 {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+.progressBarStatus4 {
+	margin-top: 2px;
+	width: 337px;
+	font-size: 7pt;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap;
+}
+
+a.progressCancel4 {
+	font-size: 0;
+	display: block;
+	height: 14px;
+	width: 14px;
+	background-image: url(../images/cancelbutton.gif);
+	background-repeat: no-repeat;
+	background-position: -14px 0px;
+	float: right;
+}
+
+a.progressCancel4:hover {
+	background-position: 0px 0px;
+}
+
+#thumbnails4 ul li{float:left;list-style-type:none;width:105px;margin-left:5px;}
+#thumbnails4 .button{display:block;position: relative;right:-84px;top: -118px;width: 30px;z-index: 1103;cursor:pointer;}
+#pic_list4 li{padding:0 0 0 5px;}
+
+
+

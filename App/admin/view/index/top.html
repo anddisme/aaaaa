@@ -1,0 +1,215 @@
+<script src="/public/bootstrap/js/jquery.min.js"></script>
+<script type="text/javascript" src="/public/layer/layer.js"></script>
+<script src="/public/pub/js/pub.js"></script>
+<script src="/public/js/img.js"></script>
+<script>
+$(document).ready(function(){ 
+    $(document).bind("contextmenu",function(e){   
+          return false;   
+    });
+	//$('body').bind("selectstart",function(){return false;});
+});
+</script>
+<script language="javascript">
+  function mySelectAll()
+  {
+  	 //alert(document.getElementById("cbSelectAll").checked);
+//	 alert(document.form1.IDList.length);
+     if(document.getElementById("cbSelectAll").checked)
+	 {
+	     if(document.form1.IDList.length==null)
+		 {
+		    //不是数组
+			document.form1.IDList.checked=true;
+		 }else{
+			 for(var i=0;i<document.form1.IDList.length;i++)
+			 {
+				document.form1.IDList[i].checked=true;
+			 }
+		 }
+	 }else{
+	     if(document.form1.IDList.length==null)
+		 {
+		    //不是数组
+			document.form1.IDList.checked=false;
+		 }else{
+			 for(var i=0;i<document.form1.IDList.length;i++)
+			 {
+				document.form1.IDList[i].checked=false;
+			 }
+		 }
+	 }
+  }
+
+function myAction(type,TypeID)
+{
+	var s="";
+	$("#IDList:checked").each(function() {
+		s += $(this).val() + ",";
+	});
+	if(s!="")
+	{
+		s=s.substr(0,s.length-1);
+	}
+	 if(s=="")
+	 {
+        $("#ydtoid option:first").prop("selected", 'selected'); 
+		show_('请选择要批量操作的文档!');
+		return false;
+	 }
+	 if(type=="DelSome")
+	 {
+	if(!confirm("你确定要批量删除选择中数据吗？"))
+	{
+		return false;
+	}
+	 }
+	
+	 
+	 if(type=="yd")
+	 {
+		if(TypeID<1)
+		{
+			return false;
+		}
+		if(!confirm("确定要批量移动选中数据到 "+$('#ydtoid option:selected').attr('fd')+" 吗？"))
+		{
+		    $('#ydtoid option:eq(0)').attr('selected','selected');
+			return false;
+		}
+	 }
+
+
+var url='&TypeID='+TypeID;
+var table=$("#table").val();
+var Action=type;
+var ActionIDList=s;
+$("#Action").val(type);
+$("ActionIDList").val(s);
+$("#TypeID").val(TypeID);
+if(table==''){ show_('没有找到操作数据表!'); }
+if(Action==''){ show_('没有找到操作类型!'); }
+     //document.form1.submit();
+ show1_('数据处理中...');
+ var actionurl="run.php?m=Pub&a=action&table="+table+"&Action="+Action+"&ActionIDList="+ActionIDList+url;
+ //alert(actionurl);
+// return false;
+ $.getJSON(actionurl,function(data){
+ var url=data.url;
+//alert(url);
+//return false;
+	if(url!='-1')
+	{
+	  shows_(data.text);
+	}else{
+	  show_(data.text);
+	}
+	var url=data.url;
+	if(url=='1')
+	{
+		location.reload();
+		return true; 
+	}else if(url=='-1'){
+		return false; 
+	}else{
+	    window.location=url;
+		return true;
+	}
+  });
+  
+     return false;
+  }
+</script>
+<script>  
+$(document).ready(function(){
+$(".picshow").hover(function(){
+	var X=event.clientX;
+	var Y=event.clientY;
+	var imgsrc=$(this).attr("rel");
+	$("#showimg").css({"top":Y,left:X});
+	$("#showimg").find("img").attr("src",imgsrc);
+	$("#showimg").show();
+}, function(){
+	$("#showimg").hide();
+});
+});
+
+function imgchange(idstr)
+{
+    var obj=$("#"+idstr+"_a");
+	var imgsrc=obj.find("#"+idstr).val();
+	if(imgsrc=='') 
+	{
+	   obj.find(".picshow").hide();
+	   return false;
+	}
+	obj.find(".picshow").attr("rel",imgsrc);
+	obj.find(".picshow").show();
+}
+</script>  
+<div id="showimg" style="display:none;position:fixed;z-index:999; width:auto; max-width:200px; height:auto; border:1px solid #CCCCCC;">
+<img src="" style="width:100%; min-width:100px;" />
+</div>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="navbar-header col-sm-2 col-md-2">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" target="_blank"><!--{$web['Web_Name']|default='后台管理系统'}--> </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left" id="menu_flm">
+          <li class=""><a href="/" target="_blank"><i class="icon-home"></i> <span class="mg-lf">首页</span></a></li>
+          <li class=""><a href="run.php?m=App&a=lm"><i class="icon-folder-open-alt"></i> <span class="mg-lf">栏目</span></a></li>
+ <li class=""><a href="run.php?m=App"><i class="icon-file-text-alt"></i> <span class="mg-lf">内容</span></a></li>
+
+<php>
+if($ppid==111)
+{
+</php>
+<li class=""><a href="run.php?m=Member"><i class="icon-user-md"></i> <span class="mg-lf">会员</span></a></li>
+<php>
+}
+</php>
+          
+          
+          <li class=""><a href="run.php?m=Db"><i class="icon-camera-retro"></i> <span class="mg-lf">备份</span></a></li>
+          <li class=""><a href="run.php?m=WebInfo"><i class="icon-wrench"></i> <span class="mg-lf">设置</span></a></li>
+
+
+
+
+
+
+   
+   <script>  
+$(document).ready(function(){
+$("#dropdown").hover(function(event){
+    $(".dropdown-menu").slideDown();
+}, function(event){
+    $(".dropdown-menu").hide();
+});
+
+});
+</script>  
+          <li class="last"></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown" id="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user-md"></i>&nbsp;&nbsp;账号&nbsp;&nbsp;<b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="run.php?m=User&a=xgmm"><i class="icon-wrench"></i>&nbsp;&nbsp; 修改密码</a></li>
+<li class="divider"></li>
+<li><a href="run.php?a=logout" onClick="return confirm('确定要退出系统吗？');"><i class="icon-off"></i>&nbsp;&nbsp; 退出</a></li>
+</ul>
+</li>
+</ul>
+</div>
+    </div>  
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>修改内容</title>
+<script type="text/javascript" charset="utf-8" src="/public/js/jquery-1.8.3.min.js"></script>
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+<include file='index/js' />
+<script src="/public/js/jupload/vendor/jquery.ui.widget.js"></script>
+<script src="/public/js/jupload/jquery.iframe-transport.js"></script>
+<script src="/public/js/jupload/jquery.fileupload.js"></script>
+
+
+</head>
+<style>
+body{
+	font-size:12px;
+}
+</style>
+<body class="mainbody" style="margin:0px; padding:0px;">
+<div id="jindutiao" style="float:left; width:0%; height:2px; background:#060; margin-bottom:10px;"></div>
+
+<script>
+$(function () {
+	$('#fileupload').fileupload({
+		dataType: 'json',
+		// 上传完成后的执行逻辑
+		done: function (e, data) {
+			
+			var result = JSON.parse(data.result);
+			var src = result.src;
+			//alert(result);
+			$('#tplj').val(src);
+			console.log(data);
+			return false;
+},
+// 上传过程中的回调函数
+progressall: function (e, data) {
+	var progress = parseInt(data.loaded / data.total * 100, 10);
+		//$(".bar").text(progress + '%');
+		$('.jindutiao').val(progress + '%');
+	}
+	});
+});
+
+function successxc()
+{
+	var src=$("#tplj").val();
+	//alert(src);
+	var index=parent.layer.getFrameIndex(window.name);
+	$("body",parent.document).find("#xc<!--{:get('id')}-->").attr('src',src); 
+	parent.layer.close(index);
+}
+</script>
+<php>
+$id=get('id');
+$tab=get('tab');
+if(is_numeric($id) && $id>0 && !empty($tab))
+{
+    $arr=\think\db::name("".$tab."")->where("`id`='$id'")->find();
+   // echo \think\db::name("".$tab."")->getLastSql();
+    $imgsrc=$arr['image'];
+}
+</php>
+
+<table width="95%" style="margin:auto;" border="0" cellspacing="1" cellpadding="1">
+	
+		<input type="hidden" name="id"  value="<!--{$id}-->"></td>
+  <tr>
+    <td width="22%" height="40">路径</td>
+    <td width="78%" height="40">
+    <input type="text" id="tplj" class="input normal" style="width:100%;"  value="<!--{$imgsrc}-->"></td>
+  </tr>
+  <tr>
+    <td height="40">上传</td>
+    <td height="40">
+
+		<input type="file" class="myfile"  id="fileupload"  name="file_name" data-url="<!--{:url('Common/uploads')}-->?id=<!--{$id}-->&tab=img"  style="width:250px; height:35px; position:absolute; background:#000; FILTER: alpha(opacity:0);-moz-opacity:0;opacity:0; ">
+        
+		<input type="button" value="上传图片" class="btn yellow jindutiao" style="width:100%;">
+    </td>
+  </tr>
+  <tr>
+    <td height="45">&nbsp;</td>
+    <td height="45">
+    <input type="submit" class="btn btntj1 btn-primary" style="width:100%;	" onClick="return successxc();" value="保存图片" />
+    
+    </td>
+  </tr>
+		
+</table>
+
+</body>
+</html>

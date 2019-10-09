@@ -1,0 +1,61 @@
+<div class="col-sm-2 col-md-2 sidebar">
+<ul class="nav nav-first-sidebar">
+<li class="<if condition="$mtype eq '1'">active</if>"><a href="run.php?m=WebInfo"><i class="icon-wrench mg-lf"></i> <span class="mg-lf">网站设置</span></a></li>
+<li class="<if condition="$mtype eq '2'">active</if>"><a href="run.php?m=App&a=lm"><i class="icon-folder-open-alt mg-lf"></i> <span class="mg-lf">栏目管理</span></a></li>
+<li class="<if condition="$mtype eq '2_1'">active</if>"><a href="run.php?m=App"><i class="icon-file-text-alt mg-lf"></i> <span class="mg-lf">内容管理</span></a></li> 
+
+
+
+<li class="<if condition="$mtype eq 'City'">active</if>"><a href="run.php?m=City"><i class="icon-shield mg-lf"></i> <span class="mg-lf">城市管理</span></a></li> 
+<php>
+if($blm==99999)
+{
+</php>
+
+<li class="<if condition="$mtype eq 'Member'">active</if>"><a href="run.php?m=Member"><i class="icon-user-md mg-lf"></i> <span class="mg-lf">会员管理</span></a></li> 
+<php>
+}
+</php>
+
+
+
+
+<li class="<if condition="$mtype eq '6'">active</if>"><a href="run.php?m=Book"><i class="icon-reply-all mg-lf"></i> <span class="mg-lf">留言管理</span></a></li>
+
+
+
+<li class="<if condition="$mtype eq '3'">active</if>"><a href="run.php?m=Ad"><i class="icon-crop mg-lf"></i> <span class="mg-lf">广告管理</span></a></li> 
+<li class="<if condition="$mtype eq '4'">active</if>"><a href="run.php?m=Links"><i class="icon-unlink mg-lf"></i> <span class="mg-lf">友情链接</span></a></li> 
+<li class="<if condition="$mtype eq '5'">active</if>"><a href="run.php?m=Kf"><i class="icon-microphone mg-lf"></i> <span class="mg-lf">在线客服</span></a></li> 
+
+
+
+
+<li class="<if condition="$mtype eq 'db'">active</if>"><a href="run.php?m=Db"><i class="icon-camera-retro mg-lf"></i> <span class="mg-lf">备份数据</span></a></li> 
+
+<li class="<if condition="$mtype eq 'db'">Hsz</if>"><a href="run.php?m=Hsz"><i class="icon-hospital mg-lf"></i> <span class="mg-lf" style="letter-spacing:7px;">回收站</span></a></li> 
+
+
+
+
+
+
+
+<if condition="$web['cache'] eq 1">
+<li class="<if condition="$mtype eq 'html'">active</if>"><a target="" href="run.php?m=Html" class="g1xhcan"><i class="icon-chevron-sign-down mg-lf"></i> <span class="mg-lf">更新网站</span></a></li>
+<!--<li><a target="_blank" href="run.php?m=WebInfo&a=Clear_Cache" class="g1xhcan"><i class="icon-comment-alt mg-lf"></i> <span class="mg-lf">更新网站</span></a></li>
+--></if>
+
+
+
+
+
+
+<li class=""><a target="_blank" href="http://www.scltt.com"><i class="icon-phone-sign mg-lf"></i> <span class="mg-lf">售后服务</span></a></li> 
+
+</ul>
+<div class="nav-bottom-sidebar">
+      <a target="_blank" href="http://www.scltt.com" class="to-clear"><i class="icon-phone-sign"></i> 技术支持：狼途腾</a>
+      </div>
+</div>
+

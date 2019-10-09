@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <include file='index/title' />
+  <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/public/pub/font-awesome/css/font-awesome.min.css">
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="/Public/font-awesome/css/font-awesome-ie7.min.css">
+  <![endif]-->
+  <link rel="stylesheet" href="/public/pub/icheck/css/blue.css">
+  <link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+  <link rel="stylesheet" href="/public/pub/dialog/css/zebra.dialog.css">
+  <link rel="stylesheet" href="/public/pub/admin/css/common.css">
+  <link rel="stylesheet" href="/public/pub/common/css/common.css">
+  <link rel="stylesheet" href="/public/pub/hhshare/css/share.css">
+  <link href="/public/pub/sys/css/tc.css?v2016" rel="stylesheet" type="text/css">
+  <script src="/public/bootstrap/js/jquery.min.js"></script>
+  <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../public/js/pop.js"></script>
+  <script src="/public/pub/sys/js/fbase.js"></script>
+  <script src="/public/pub/sys/js/main.js"></script>
+  <script src="/public/pub/sys/js/b.js"></script>
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <style>
+  .page {}
+  .page a{ display:inline-block; padding:0 2px;}
+  .page a.current{ color:#f00;}
+  .curve_mid{ width:100%; margin-top:10px;}
+  .curve_mid td{ padding:4px 5px;}
+  .curve_mid tr.no td{ padding:10px 0;}
+  .curve_mid th{ text-align:center;}
+  .form-control{ display:inline-block;}
+  .center{ text-align:center;}
+  .b25{ width:25%;}
+  .b30{ width:30%;}
+  .b50{ width:50%;}
+  .b75{ width:75%;}
+  .b60{ width:60%;}
+  .wat{ width:auto;}
+  .w30{ width:50px; padding:2px 4px; height:24px; line-height:24px;}
+  .w30_{ width:50px; padding:6px 4px; }
+  .w120{ width:120px; padding:6px 4px;}
+  .w180{ width:180px; padding:6px 4px;}
+  .w90_{ width:90px; padding:6px 4px; }
+  
+  .fright{ float:right;}
+  .btnd:hover{ background:#999; color:#fff;}
+  .nav-bottom-sidebar a{ width:100%;}
+  .navbar-brand{ height:37px; overflow:hidden; padding-right:0;}
+  </style>
+</head>
+<body>
+<include file='index/top' />
+<div class="container-fluid full">
+  <div class="row full">
+<include file='index/menu' />
+    <!-- end of sidebar -->
+
+
+
+
+
+
+
+
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <ol class="breadcrumb">
+    	<li style="float:right"><b>
+		<if condition="$pid gt 0">
+		<a href="run.php?m=City&a=add&pid=<!--{$pid}-->">添加城市</a>
+		<else />
+		<a href="javascript:;" onClick="alert('请选择下级城市')">添加城市</a>
+		</if>
+		</b></li>
+        <li><i class="icon-coffee"></i> 城市管理
+</li>
+       
+    </ol>
+    <div class="wrap">
+        <h2 class="wrap-head"><strong><i class="icon-list"></i></strong><small>城市列表</small></h2>
+        
+<style type="text/css">
+.td div{ position:relative; display:block; /*z-index:999;*/ height:20px;}
+.td div img{ height:60px; position:absolute; margin-top:-20px;}
+</style>
+
+
+<div class="table-responsive">
+   <table class="table table-hover table-bordered curve_mid">
+   <form id="form1" name="form1" method="post" action="run.php?a=Pub&a=ac1tion">
+<input type="hidden" id="ActionIDList" name="ActionIDList" />
+<input type="hidden" id="Action" name="Action" />
+<input type="hidden" id="table" name="table" value="city_info" />
+<input type="hidden" id="backurl" name="backurl" value="__URL__" />
+
+
+  <tr class="no">
+  	<th></th>
+    <th>ID</th>
+    <th align="center"><div style=" min-width:170px;">城市名称</div></th>
+    <th align="center">父级</th>
+    <th align="center">更新时间</th>
+    <th align="center">操作</th>
+  </tr>
+  <tbody>
+<foreach name="list" item="arc">
+<tr id="<!--{$arc.id}-->" >
+<td>
+<input type="checkbox" id="IDList" name="IDList" style="border:0" value="<!--{$arc.id}-->" /> 
+</td>
+<td align="center"><!--{$arc.id}--></td>
+<td class="td" fd='cityname'>
+<!--{$arc.cityname}-->
+</td>
+<td align="center"><!--{$arc[pid]|cityname}--></td>
+<td align="center"><!--{$arc.endtime}--></td>
+
+ 
+<td align="center">
+
+<a href="run.php?m=City&pid=<!--{$arc.id}-->">下级</a> <a href="run.php?m=City&a=updata&id=<!--{$arc.id}-->">修改</a> <a  onClick="return delid('<!--{$arc[id]}-->','city_info')" href="javascript:;">删除</a></td>
+</tr>
+</foreach>
+</tbody>
+    <tr class="no">
+    	<td> </td>
+      <td colspan="7" align="left">
+      <label class="foot-label">
+	   <input type="checkbox" style="border:1px solid #ccc" id="cbSelectAll" name="cbSelectAll" value="checkbox" onClick="mySelectAll()" />
+	   全选</label>
+
+		
+			<button class="btn btn-primary" onClick="return myAction('DelSome')">&nbsp;选中删除&nbsp;</button>
+		
+      </td>
+    </tr>
+    <tr class="no">
+    <td colspan="8" align="center" class="page">
+	<!--{$fenye}-->
+	</td>
+    </tr>
+	 </form>
+</table>
+</div>
+</div>
+</div></div>
+  </div>
+</div>
+<ul class="scroll-bar hide">
+  <li><a href="javascript:;" onClick="toggleFaq();"><i class="icon-question-sign"></i></a></li>
+  <li><a href="javascript:;" id="top"><i class="icon-circle-arrow-up"></i></a></li>
+</ul>
+<include file='index/foot' />
+<input name="table" id="table" type="hidden" value="city_info">
+<include file="ajax"/>
+</body>
+</html>

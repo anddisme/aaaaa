@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {padding:0px; margin:0px; }
+a {text-decoration:none;}
+img {border:0px;}
+ul,li{ list-style:none;}
+h1,h2,h3,h4,span,strong,em{ margin:0px; padding:0px;}
+body {font-size:12px;font-family:"宋体"; height:100%; background:url(../images/bj.jpg); width:100%;}
+
+.login{ width:495px; height:100%; margin:150px auto 0 auto;}
+.login span{ float:left; width:382px; height:44px; padding-left:6px;}
+.login h3{ float:left; width:495px; height:149px; margin:0px 0px 0px 5px; display:inline;}
+.login strong{ float:left; background:url(../images/l1.gif) repeat; width:445px; height:138px; padding:45px 0px 0px 60px; font-weight:normal; border:#FFF;}
+.login strong h1{ float:left; width:250px; height:25px; font-size:14px; color: #933; font-weight:normal; display:inline; margin:0px 0px 6px 100px;}
+.login strong h2{ float:right; margin:40px 18px 0px 0px; _margin:15px 10px 0px 0px;!important display:inline; width:450px; height:100%; _height:50px;!important}
+.login strong h2 img{ float:right; width:100px; margin:0px 30px 0px 0px; }
+.login strong h2 em{ float:left; font-size:14px; line-height:20px; font-style:normal; margin:2px 0px 0px 0px; color:#ffea00; font-weight:bold; width:100px; _width:50px;!important height:100%;}
+
+.login_kuang{ width:250px; height:18px; margin:0px 0px 11px 0px; border:1px solid #FFF; background:#FFF;}
+.login_kuang2{ float:left; width:60px; height:18px; margin:0px 5px 0 0px; border:1px solid #FFF; background:#FFF;}
+button.btn{background:url(../images/l2.gif) no-repeat; width:100px; height:26px; border:none; overflow:hidden;}
+
+.xbtn,button{ border:1px solid #ccc; background:#fcfcfc; padding:0 5px; margin:0 2px; cursor:pointer; height:22px;}
+input{ border:1px solid #9B9B9B;height:20px;}
+
+#myPage { width:100%; height:100%;overflow:auto; padding:0; margin:0;}
+.lightBox,.lightBoxbox,.lightBoxpopupCover,.lightBoxpopupIframe { position:absolute; left:0; top:0; width:100%; height:100%;}
+.lightBox {z-index:200; display:none; }
+#loading{ z-index:250;}
+.lightBoxpopupIframe{ display:none; _display:block; _filter:alpha(opacity=0);}
+.lightBoxpopupCover { background:#000; opacity:0.2; filter:alpha(opacity=20);}
+.lightBoxbox{text-align:center; overflow:auto;}
+.lightBoxContent { position:relative; display:inline-block; *display:inline; zoom:1; min-width:200px; background-color:#fff; padding:10px; min-height:24px; border:4px solid #2C8ECD; vertical-align:middle;}
+.lightBoxMaxHeight{display:inline-block; vertical-align:middle; height:100%; *height:99.5%; width:1px; overflow:hidden; margin-left:-1px;}
+.lightBoxWrapper { display:inline-block; *display:inline; zoom:1; text-align:left;}
+.lightBoxSubmit { margin-top:10px; padding-top:5px; border-top:1px solid #ccc;}
+.lightBoxSubmit input { font-size:12px; padding:0 10px; overflow:visible; margin:0 5px; background:#fff;}
+.lightBoxinfo{ background:#fff url(../images/info.gif) no-repeat 30px 5px;}
+.lightBoxloading{ background:#fff url(../images/load.gif) no-repeat 30px 5px;}
+.lightBoxinfo .lightBoxWrapper,.lightBoxloading .lightBoxWrapper{ font-size:15px; padding:5px 60px 0 70px; text-align:left;}

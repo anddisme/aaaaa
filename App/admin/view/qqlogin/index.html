@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>信息管理</title>
+<link href="/public/skin/scripts/artdialog/ui-dialog.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/css/pagination.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<include file="index/js" />
+</head>
+
+<body class="mainbody">
+
+
+<div class="location">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('Index/main')}-->" class="home"><i></i><span>首页</span></a>
+  
+  <i class="arrow"></i>
+  <span><a>绑定qq</a></span>
+
+
+
+
+
+</div>
+<!--/工具栏-->
+
+<!--列表-->
+<div class="table-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="e7e7e7" align="center" style="margin-top:20px">
+
+<script>
+function sctype(type)
+{
+//alert(type);
+  if(type==''){ return false; }
+  if(type=='lm'){ }
+  $("#type").val(type); 
+  $("#scbdk").submit();
+}
+</script>
+
+<tr align='center' height="22" >
+<td height="36" colspan="2" align="left">
+
+  <input type="hidden" name="m" value="Html"/>
+  <input type="hidden" name="type" id="type" value=""/>
+<div style="float:left; width:100%; height:30px; line-height:30px; font-size:12px;">
+<script type="text/javascript"> 
+$(function() { 
+	$("#selectall").click(function() { 
+		$("#selectk").find('option').attr('selected','selected');
+	}); 
+	$("#selectall1").click(function() { 
+		$("#selectk").find('option').attr('selected',false);
+	}); 
+	
+}); 
+</script> 
+<a href="javascript:;" id="selectall2222" style="padding-left:10px;"><strong>qq绑定信息预览</strong></a>
+
+</div>
+    <style>
+        .qqimg img{
+            margin-top: 30px;
+            margin-left: 50px;
+        }
+    </style>
+  <div  class="form-control">
+        <div style="margin: 50px 0 20px 20px;">qq昵称:<!--{$qqarr['nickname']}--></div>
+      <div class="qqimg"  style="margin: 30px 0 20px 20px;"> qq头像:<img src="<!--{$qqarr['figureurl_qq']}-->" width="100px" height="100px"></div>
+      <div  style="margin: 50px 0 20px 20px;"> openid:<!--{$qqarr['openid']}--></div>
+  </div>
+ 
+ <div style="float:left; padding-left:10px; padding-bottom:10px; font-size:14px;">
+
+    <a style="color: #fff;margin-top: 30px;" href="<!--{:url('Qqlogin/bdqq')}-->" target="htmlfrom" id="btn_sub"  type="button" class="btn btn-primary">确认绑定</a>
+
+ </div>
+ 
+ 
+   </td>
+</tr>
+
+
+<tr align='center' bgcolor="#FFFFFF" height="22" >
+<td height="36" colspan="2" align="right" style="padding-left:10px; padding-top:20px;">
+  <iframe frameborder="0" name="htmlfrom" id="htmlfrom" style=" width:100%; border:none; height:450px;" src="">
+        
+  </iframe></td>
+</tr>
+
+
+
+  
+   <tr class="no">
+      <td colspan="2" align="center">	   </td>
+    </tr>
+  
+  
+
+
+<td width="100"></form>
+</table>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+<!--/列表-->
+
+
+
+</body>
+
+</html>

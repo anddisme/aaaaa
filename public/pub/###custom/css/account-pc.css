@@ -1,0 +1,289 @@
+@charset "utf-8";
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong,var,b,u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,td,tr {margin: 0px;padding: 0px;}
+body {
+   font-family: "Microsoft YaHei","Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+   padding:0px;margin: 0px;
+   min-width: 1210px;
+   position: relative;z-index: 0;
+}
+a,a:hover,a:focus {
+  text-decoration: none;
+  outline: medium none;
+}
+a{ color: #686868;}
+a:hover{color: #000;}
+ul li{  list-style-type:none;}
+img{border: none;}
+.container{ 
+  width:1208px; min-height: 1px;height: auto;
+  margin:0 auto;
+  padding: 0;
+  clear: both;
+  overflow: hidden;
+}
+#header{
+  min-height: 1px;height: auto;overflow: hidden;
+  padding: 24px 0 30px;
+}
+#header .logo{
+  float: left;
+  width: 334px;
+}
+#header .logo a,#header .logo a img{
+  display: block;
+  width: 304px;height: 79px;
+}
+#header .tip{
+  float: left;
+  padding: 24px 0 16px;
+}
+#header .tip strong{
+	display: block;
+	height: 40px;line-height: 40px;
+	padding-left: 20px;
+	border-left: 1px solid #ddd;
+	font-size: 18px;font-weight: 400;
+}
+#header .contact{
+	float: right;
+	padding: 28px 0 12px;
+	line-height: 40px;
+}
+/* form */
+.form-horizontal{
+	padding-top: 20px;
+}
+.form-horizontal .form-group{
+	margin-bottom: 30px;
+}
+.form-horizontal .form-control{
+	border-radius: 0px !important;
+}
+.form-horizontal .control-label{
+	font-weight: 400;
+}
+.form-horizontal .control-label b{
+	color: #ff0000;
+	display: inline-block;
+	line-height: 16px;
+}
+.form-horizontal .input-group-addon{
+	border-radius: 0px !important;
+}
+.form-horizontal a.link{
+	color: #ff8e01
+}
+.btn{ 
+	border-radius: 0px !important;
+}
+.btn:hover,
+.btn:focus{
+	color: #fff;
+}
+/* end form */
+/* login css */
+#login{
+	position: relative;
+}
+.login-bg{
+	position: relative;
+}
+.login{
+	width: 100%;
+	min-height: 1px;height: auto;overflow: hidden;
+	position: absolute;
+	top: 70px;
+}
+.login-form{
+	display: block;
+	float: right;
+	width: 300px;
+	min-height: 1px;height: auto;overflow: hidden;
+	padding: 16px 32px;
+	margin-right: 80px;
+	background-color: #fff;
+}
+.login-form .form-group{
+	margin-bottom: 0px;
+}
+h2.login-title{
+	border-bottom: 1px solid #e9e7e7;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+h5.login-alert{
+	width: 100%;
+	height: 24px;line-height: 24px;	
+	font-size: 12px;font-weight: 400;
+}
+h5.login-alert span{
+	color: #ff0000;
+}
+.login-input{
+	width: 100%;height: 30px;
+	padding-top: 5px;
+	border:1px solid #ddd;
+}
+.login-input label{
+	display: inline-block;
+	width: 12%;
+	text-align: center;
+	color: #ccc;
+	border: none;line-height: 14px;
+}
+.login-input input{
+	width: 84%;
+	font-size: 12px;
+	border: none;line-height: 14px;
+}
+.keep{
+	margin-top: 10px;
+	padding: 10px 0;
+}
+.keep input{
+	display: inline-block;
+	vertical-align: bottom;margin-right: 2px;margin-bottom: 2px;
+}
+.keep label{
+	display: inline-block;
+	font-size: 12px;font-weight: 400;
+}
+.keep a{
+	display: inline-block;
+	float: right;
+	font-size: 12px;
+}
+.btn-login{
+	width: 100%;line-height: 24px;
+	background-color: #86b622;color: #fff;
+}
+/* end login */
+/* register css */
+.alert{
+	background-color: #86b622;
+	color: #fff;
+	margin-bottom: 0px;
+	border-radius: 0px !important;
+}
+.register-form{
+	float: left;
+	width: 880px;
+	min-height: 1px;height: auto;overflow: hidden;
+}
+.register-ad{
+	float: right;
+	width: 328px;height: 480px;
+	background-color: #f4f4f4;
+}
+.register-ad img{
+	display: block;
+	margin: 100px auto 50px;
+}
+.register-ad h3{
+	text-align: center;
+	font-size: 14px;font-weight: 400;
+}
+.register-ad h3 span{
+	color: #00adef;
+}
+ul.register-identify{
+	min-height: 1px;height: auto;overflow: hidden;
+	padding: 10px 0 0;
+}
+ul.register-identify li{
+	display: inline-block;
+	margin-right: 40px;
+}
+ul.register-identify li a:hover,
+ul.register-identify li a:focus,
+ul.register-identify li a.active{
+	color: #86b622;
+    text-decoration: underline;
+}
+.passwordStrength-label{
+	padding-top: 0px !important;
+}
+.passwordStrength{
+}
+.passwordStrength b{
+	font-weight:normal;
+}
+.passwordStrength b,.passwordStrength span{
+	display:inline-block; 
+	line-height:18px\9;
+}
+.passwordStrength span{
+	width:88px;text-align:center; 
+	background-color:#d0d0d0; 
+	border-right:1px solid #fff;
+}
+.passwordStrength .last{
+	border-right:none;
+}
+.passwordStrength .bgStrength{
+	color:#fff;background-color:#71b83d;
+}
+#memberMold{
+	margin-bottom: 10px;
+}
+ul.register-molds{
+	min-height: 1px;height: auto;overflow: hidden;
+}
+ul.register-molds li{
+	display: inline-block;
+	width: 120px;
+	padding: 5px 0; 
+}
+.btn-register{
+	width: 100%;line-height: 28px;
+	background-color: #86b622;color: #fff;
+}
+/* aggreement */
+#agreement{
+  width: 680px;height: 480px;
+  position: absolute;z-index: 1009;
+  top: 210px;left: 50%;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  margin-left: -340px;
+  padding: 20px;
+}
+#agreement h2{
+  height: 50px;line-height: 40px;
+  border-bottom: 1px solid #ddd;
+}
+#agreement h2 strong{
+  display: inline-block;
+  font-size: 20px;font-weight: 400;
+}
+#agreement h2 a{
+  display: inline-block;
+  float: right;
+  font-weight: 400;font-size: 12px;
+  background-color: #86b622;color: #fff;
+  margin-top: 16px;
+  line-height: 24px;
+  padding: 0 6px;
+}
+#agreement .content{
+  width: 638px;height: 380px;
+  padding: 20px 10px;
+  background-color: #f5f5f5;
+  border: none;
+  overflow-x: auto;
+}
+/* end aggreement */
+/* end register */
+.footer{
+  padding:50px 0 30px;
+}
+.footer p{
+  text-align: center;
+  font-size: 12px;
+}
+.footer p span{
+  display: inline-block;margin-right: 16px; 
+}
+.footer p a{
+  color: #86b622;
+}

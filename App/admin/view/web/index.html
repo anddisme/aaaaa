@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>修改内容</title>
+  <link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" charset="utf-8" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+
+<include file='index/js' />
+</head>
+
+<body class="mainbody">
+
+<div class="line10"></div>
+<!--/导航栏-->
+
+
+
+<link rel="stylesheet" href="/public/bjq/themes/default/default.css" />
+<script type="text/javascript" src="/public/bjq/kindeditor-min.js"></script><!--编辑器-->
+<script type="text/javascript" src="/public/bjq/lang/zh_CN.js"></script><!--公用-->
+<script>
+  KindEditor.ready(function(K) {
+    var editor = K.editor({
+      allowFileManager : true
+    });
+    K('#Addesscn').click(function() {
+      editor.loadPlugin('image', function() {
+        editor.plugin.imageDialog({
+          imageUrl : K('#Addess').val(),
+          clickFn : function(url, title, width, height, border, align) {
+            K('#Addess').val(url);
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+    K('#taobaourlan').click(function() {
+      editor.loadPlugin('image', function() {
+        editor.plugin.imageDialog({
+          imageUrl : K('#taobaourl').val(),
+          clickFn : function(url, title, width, height, border, align) {
+            K('#taobaourl').val(url);
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+
+  });
+</script>
+
+
+
+
+
+
+
+<!--内容-->
+<div id="floatHead" class="content-tab-wrap">
+  <div class="content-tab">
+    <div class="content-tab-ul-wrap">
+      <ul>
+        <li><a class="selected" href="<!--{:url('Web/index')}-->">系统配置</a></li>
+        <li><a  href="<!--{:url('Webinfo/index')}-->">网站参数</a></li>
+		<li><a  href="<!--{:url('Email/index')}-->">邮箱配置</a></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content">
+  <form name="form1" id="from1" method="post" action=""  class="form-horizontal">
+
+    <dl>
+      <dt>系统名称</dt>
+      <dd>
+        <input type="text" class="input normal" style="width:50%;"  id="Web_Name" name="Web_Name"  value="<!--{$info.Web_Name}-->"  datatype="*1-50"  placeholder="(网站的名称)"/>
+        <span>*网站的名称：1-50个字符</span>
+      </dd>
+    </dl>
+   
+    <dl>
+      <dt>LOGO</dt>
+      <dd>
+        <div id="Addess_a">
+          <strong></strong><input  type="text" name="Addess" class="input normal" id="Addess" rel="<!--{$info.Addess}-->" style="width:200px;" value="<!--{$info.Addess}-->"> <input class="btn btn-primary" type="button" id="Addesscn" value="上传图片" />
+          <font  style="color:#27a9e3; display:none;" class="picshow" rel="<!--{$links.S_Image}-->">[预览]</font>
+        </div>
+        <script>
+          setInterval('imgchange("Addess")',1000);
+        </script>
+      </dd>
+    </dl>
+    <dl>
+      <dt>二维码</dt>
+      <dd>
+        <div id="taobaourl_a">
+          <strong></strong><input type="text" name="taobaourl" class="input normal" id="taobaourl" style="width:200px;" value="<!--{$info.taobaourl}-->"> <input class="btn btn-primary" type="button" id="taobaourlan" value="上传图片" />
+          <font  style="color:#27a9e3; display:none;" class="picshow" rel="<!--{$links.S_Image}-->">[预览]</font>
+        </div>
+        <script>
+          setInterval('imgchange("taobaourl")',1000);
+        </script>
+      </dd>
+    </dl>
+    <dl>
+      <dt>开启静态</dt>
+      <dd>
+
+        <input name="cache" type="radio" value="1"  <if condition="$info.cache eq '1' ">checked="checked"</if> />
+        是
+        <input name="cache" type="radio" value="0" <if condition="$info.cache eq '0'" >checked="checked"</if>  />
+        否
+        <span style="color:#999"> </span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>关闭网站</dt>
+      <dd>
+
+        <input  onClick="$('#clotxt').show()" name="Locked" type="radio" value="1"  <if condition="$info.Locked eq '1'" >checked="checked"</if> />
+        是
+        <input  onClick="$('#clotxt').hide()"  name="Locked" type="radio" value="0"  <if condition="$info.Locked eq '0'" >checked="checked"</if> />
+        否
+
+        <span style="color:#999"> </span>
+  
+      </dd>
+    </dl>
+
+<dl>
+<dt>网站标题</dt>
+<dd>
+<label for="textarea"></label>
+<textarea name="Title" id="Title" cols="45" rows="5" class="input normal" style="width:65%;"><!--{$info.Title}--></textarea>  <span style="color:#999"></span>
+</dd>
+</dl>
+
+
+
+
+<dl>
+<dt>首页标题</dt>
+<dd>
+<label for="textarea"></label>
+<textarea name="t3" id="t3" cols="45" rows="5" class="input normal" style="width:65%;"><!--{$info.t3}--></textarea>  <span style="color:#999"></span>
+</dd>
+</dl>
+
+
+
+
+
+    <dl>
+      <dt>关键词</dt>
+      <dd>
+        <label for="textarea"></label>
+        <textarea name="SeoTitle" id="SeoTitle" cols="45" rows="5" class="input normal" style="width:65%; height:100px;"><!--{$info.SeoTitle}--></textarea>  <span style="color:#999"></span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>描               &nbsp;&nbsp;   述</dt>
+      <dd>
+        <label for="textarea"></label>
+        <textarea name="Description" id="Description" cols="45" rows="5" class="input normal" style="width:65%; height:100px;"><!--{$info.Description}--></textarea>  <span style="color:#999"></span></td>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>禁止访问IP</dt>
+      <dd>
+        <label for="textarea"></label>
+        <textarea name="ips" id="ips" cols="45" rows="20" class="input normal" style="width:65%; height:200px;"><!--{$info.ips}--></textarea>  <span style="color:#999">*一行一IP</span></td>
+      </dd>
+    </dl>
+
+
+   
+
+
+</div>
+
+
+
+<!--/内容-->
+
+<!--工具栏-->
+<div class="page-footer">
+  <div class="btn-wrap">
+
+    <input type="submit" name="btnSubmit" value="提交保存" id="btnSubmit" class="btn" />
+    <input name="btnReturn" type="button" value="返回上一页" class="btn yellow" onClick="javascript:history.back(-1);" />
+  </div>
+</div>
+<!--/工具栏-->
+
+</form>
+<include file='index/foot' />
+</body>
+</html>

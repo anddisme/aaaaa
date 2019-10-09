@@ -1,0 +1,96 @@
+<include file='index/head' />
+<div class="container in-wrap">
+<div class="crumbs">
+<a href="/">首页</a> <!--{$pathmenu}-->
+</div>
+
+        <div class="about-wrap">
+            <div class="about-tit">
+                <span><!--{:typearr($blm,'sTypeName')}--></span>
+                <h2><!--{:typearr($blm,'TypeName')}--></h2>
+                <i></i>
+            </div>
+        </div>
+    </div>
+    <div class="ctt-bg">
+        <div class="container">
+            <div class="ctt-wrap">
+
+
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+<script type="text/javascript" src="/public/layer/layer.js"></script>
+<script src="/public/pub/validform/js/validform_v5.3.2.js"></script>
+<script src="/public/pub/validform/js/validform.js"></script>
+<script src="/public/pub/validform/js/validform_v5.3.2.js"></script>
+<script src="/public/pub/validform/js/validform.js"></script>
+<form action="/index_Index_book.php" method="post" class="form-horizontal msg-form">
+
+<div class="clearfix">
+<div class="ipt-cl">
+<div class="form-tit"><span>姓名称呼</span>Name:</div>
+<div class="ipt-txt"><input type="text" name="t1" placeholder="请输入姓名" datatype="*2-10" msg="请输入正确的姓名"></div>
+</div>
+<div class="ipt-cl">
+<div class="form-tit"><span>联系电话</span>Telephone:</div>
+<div class="ipt-txt"><input type="text" name="t2" placeholder="请输入电话" datatype="m" msg="请输入正确的电话号码"></div>
+</div>
+<div class="ipt-cl">
+<div class="form-tit"><span>邮箱地址</span>E-mail:</div>
+<div class="ipt-txt"><input type="text" placeholder="请输入您的邮箱地址" name="t3"></div>
+</div>
+</div>
+<div class="msg-area">
+<div class="form-tit"><span>在线留言</span>Message:</div>
+<div class="msg-area-bg">
+<textarea name="t4" placeholder="请输入您的留言"></textarea>
+</div>
+</div>
+<input type="submit" class="sub-btn2" value="提 交">
+</form>
+<script>
+$(".form-horizontal input").focus(function(){
+    var obj=$(this);
+    if (obj.hasClass("Validform_error"))
+    {
+        var v=obj.val();
+        var msg=obj.attr('msg');
+        var msg2=obj.attr('placeholder');
+        if (v=='')
+        {
+            layer.msg(msg2,{time:3000});
+        }
+        else
+        {
+            layer.msg(msg,{time:3000});
+        }
+    }
+});
+</script>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="ctt-way container clearfix">
+        <div class="ctt-l">
+            <p>联系电话：<!--{$web['c1']}--></p>
+            <p>销售咨询：<!--{$web['c2']}--></p>
+            <p>销售咨询：	<!--{$web['c3']}--></p>
+            <p>地　　址： <!--{$web['c4']}--></p>
+        </div>
+        <div class="ctt-r">
+            <p>传　　真：<!--{$web['c5']}--></p>
+            <p>电子邮件：<!--{$web['c6']}--></p>
+            <p>在线Q Q：<!--{$web['c7']}--></p>
+            <p>邮政编码：<!--{$web['c8']}--></p>
+        </div>
+    </div>
+</div>
+<div class="map-wrap">
+    <img class="img-auto" src="<!--{$web['c9']}-->" alt="">
+</div>
+<div class="queque"></div>
+<include file='index/foot' />

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>信息管理</title>
+<link href="/public/skin/scripts/artdialog/ui-dialog.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+<link href="/public/skin/css/pagination.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<include file="index/js" />
+</head>
+<body class="mainbody">
+<form id="form1" name="form1" method="post" action=""  class="form-horizontal">
+<input type="hidden" id="ActionIDList" name="ActionIDList" />
+<input type="hidden" id="Action" name="Action" />
+<input type="hidden" id="table" name="table" value="sql" />
+<input type="hidden" id="backurl" name="backurl" value="__URL__" />
+<div class="location">
+  <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+  <a href="<!--{:url('Index/main')}-->" class="home" target="mainframe"><i></i><span>首页</span></a>
+  
+  <i class="arrow"></i>
+  <span><a>数据表管理</a></span>
+
+</div>
+<!--/导航栏-->
+<!--工具栏-->
+<div id="floatHead" class="toolbar-wrap">
+<div class="toolbar" style="float:left; width:100%; ">
+<div class="box-wrap" style="float:right; width:auto;">
+<div class="l-list">
+<ul class="icon-list" style="display: none;">
+  <li><a class="add"  href="javascript:;" onClick="return bakdb();"><i></i><span>新增备份</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!--/工具栏-->
+
+<!--列表-->
+<div class="table-container">
+  
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
+    <tr>
+      <th align="left" width="45%">数据表名</th>
+  
+      <th width="10%">操作</th>
+    </tr>
+  
+   
+  
+
+<foreach name="re" item="links">
+<tr id="<!--{$links['id']}-->">
+
+<td>
+<!--{$links['Tables_in_thinkphp5']}--></td>
+
+<td align="center" align="center">
+
+<a href="<!--{:url('Sql/downlo1ad',['id'=>$lin1ks['id']])}-->">下载</a>
+
+<a  onClick="return delid('<!--{$link1s['id']}-->','sql')" href="javascript:;">删除</a>
+
+</td>
+</tr>
+</foreach>
+    
+  </table>
+
+<div class="paging" style="color:#666; text-align:right;">
+<!--{$fenye}-->
+ </div>
+</div>
+
+
+<script type="text/javascript">
+function bakdb(){
+show1_('数据库备份中...');
+ var actionurl='<!--{:url("Sql/bak")}-->';
+ $.getJSON(actionurl,function(data){
+    var url=data.url;
+    shows_(data.text);
+  	if(url!='')
+	{   
+	    window.location=url,3000
+		return true;
+	}
+  });
+ }
+</script>
+<script src="/public/pub/validform/js/validform_v5.3.2.js"></script>
+<script src="/public/pub/validform/js/validform.js"></script>
+</body>
+</html>

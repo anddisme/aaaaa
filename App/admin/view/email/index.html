@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>修改内容</title>
+  <link href="/public/skin/default/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" charset="utf-8" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+
+<include file='index/js' />
+</head>
+
+<body class="mainbody">
+
+<div class="line10"></div>
+<!--/导航栏-->
+
+
+
+
+
+
+
+<!--内容-->
+<div id="floatHead" class="content-tab-wrap">
+  <div class="content-tab">
+    <div class="content-tab-ul-wrap">
+      <ul>
+        <li><a href="<!--{:url('Web/index')}-->">系统配置</a></li>
+        <li><a href="<!--{:url('Webinfo/index')}-->">网站参数</a></li>
+        <li><a class="selected" href="<!--{:url('Email/index')}-->">邮箱配置</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content">
+  <form name="form1" id="from1" method="post" action=""  class="form-horizontal">
+
+<dl>
+<dt>HOST服务器</dt>
+<dd>
+<input type="text" class="input normal" style="width:50%;"  id="host" name="host"  value="<!--{$info.host}-->"  datatype="*1-50"  placeholder="请输入smtp服务器"/>
+<span>*如：smtp.qq.com,smtp.126.com</span>
+</dd>
+</dl>
+
+<dl>
+<dt>端口</dt>
+<dd>
+<input type="text" class="input normal" style="width:50%;"  id="port" name="port"  value="<!--{$info.port}-->"  datatype="*1-50"  placeholder="请输入端口"/>
+<span>*一般为465</span>
+</dd>
+</dl>
+
+<dl>
+<dt>用户名</dt>
+<dd>
+<input type="text" class="input normal" style="width:50%;"  id="username" name="username"  value="<!--{$info.username}-->"  datatype="*1-50"  placeholder="请输入用户名"/>
+<span>*发送邮箱用户名</span>
+</dd>
+</dl>
+
+<dl>
+<dt>密码</dt>
+<dd>
+<input type="password" class="input normal" style="width:50%;"  id="password" name="password"  value="<!--{$info.password}-->"  datatype="*1-50"  placeholder="请输入密码"/>
+<span>*发送邮箱密码</span>
+</dd>
+</dl>
+
+<dl>
+<dt>默认主题</dt>
+<dd>
+<input type="text" class="input normal" style="width:50%;"  id="subject" name="subject"  value="<!--{$info.subject}-->"  datatype="*1-50"  placeholder="请输入主题"/>
+<span></span>
+</dd>
+</dl>
+
+<dl>
+<dt>发送人邮箱</dt>
+<dd>
+<input type="text" class="input normal" style="width:50%;"  id="from" name="from"  value="<!--{$info.from}-->"  datatype="*1-50"  placeholder="请输入发送人邮箱"/>
+<span></span>
+</dd>
+</dl>
+
+<dl>
+<dt>发送人昵称</dt>
+<dd>
+<input type="text" class="input normal" style="width:50%;"  id="fromname" name="fromname"  value="<!--{$info.fromname}-->"  datatype="*1-50"  placeholder="请输入发送人昵称"/>
+<span></span>
+</dd>
+</dl>
+
+   
+   
+
+
+</div>
+
+
+
+<!--/内容-->
+
+<!--工具栏-->
+<div class="page-footer">
+  <div class="btn-wrap">
+
+    <input type="submit" name="btnSubmit" value="提交保存" id="btnSubmit" class="btn" />
+    <input name="btnReturn" type="button" value="返回上一页" class="btn yellow" onClick="javascript:history.back(-1);" />
+  </div>
+</div>
+<!--/工具栏-->
+
+</form>
+<include file='index/foot' />
+</body>
+</html>

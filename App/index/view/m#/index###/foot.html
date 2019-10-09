@@ -1,0 +1,48 @@
+<div c11111111====11lass="ft-nav asdasd container t-c">
+    <ul class="clearfix i-b">
+        <li><a href="/">首 页</a></li>
+<foreach name=":caidan(0,7)" item="cd">
+<li><a href="<!--{$cd['id']|lmurl}-->"><!--{$cd['TypeName']}--></a></li>
+</foreach>
+  
+    </ul>
+</div>
+<div class="f-link">
+    <div class="container clearfix">
+        <span>友情链接：</span>
+<foreach name=":links(100)" item="arc">
+<a href="<!--{$arc['links']}-->"><!--{$arc['Title']}--></a>
+</foreach>
+
+    </div>
+</div>
+<div class="footer">
+    <div class="container clearfix">
+        <div class="ft-l clearfix">
+            <img class="f-logo" src="/s/images/f-logo.png" alt="">
+            <div class="qr">
+                <img class="img-res" src="<!--{$web['c10']}-->" alt="">
+            </div>
+            <i class="border"></i>
+        </div>
+        <div class="ft-c">
+            <p><span>服务热线：</span><!--{$web['c11']}--></p>
+            <p><span>邮箱地址：</span><!--{$web['c6'] }--></p>
+            <p><span>公司地址：<!--{$web['c4'] }--></span></p>
+            <i class="border"></i>
+        </div>
+        <div class="ft-r">
+            <p><!--{$web['c12'] }--> </p>
+            <p><!--{$web['c13'] }--></p>
+            <p>技术支持：<a href="http://www.rrbjt.com" target="_blank" title="人人帮·狼途腾科技">狼途腾科技</a></p>
+        </div>
+    </div>
+</div>
+
+
+<script src="/s/js/jquery.SuperSlide.2.1.1.js"></script>
+<script src="/s/js/aos.js"></script>
+<script src="/s/js/common.js"></script>
+
+</body>
+</html>

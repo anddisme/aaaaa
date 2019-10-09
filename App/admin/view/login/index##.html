@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="renderer" content="webkit">
+
+<title>后台登录</title>
+<link href="/public/skin/default/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/skin/scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="/public/skin/js/banner.js"></script>
+<link rel="stylesheet" href="/public/pub/validform/css/validform.css">
+<script src="/public/bootstrap/js/jquery.min.js"></script>
+<script type="text/javascript" src="/public/layer/layer.js"></script>
+<style>
+/* banner */
+body {background:#131943;}
+.banner{width:100%; margin:0 auto; position:relative; height:100%;}
+.banner .fullSlide{width:100%;position:relative;height:100%;background:transparent}
+.banner .fullSlide .bd{margin:0 auto;position:relative;z-index:0;overflow:hidden;height: 100%;}
+.banner .fullSlide .bd ul{width:100% !important;height: 100%;}
+.banner .fullSlide .bd li{width:100%;height:100%;background-repeat: no-repeat; background-position: center top; background-size: cover;overflow:hidden;text-align:center;}
+.banner .fullSlide .bd li a{display:block;height:100%}
+.banner .fullSlide .hd{width:100%;position:absolute;z-index:1;bottom:0;left:0}
+.banner .fullSlide .hd ul{text-align:center;margin-bottom:10px}
+.banner .fullSlide .hd ul li{cursor:pointer;display:inline-block;*display:inline;zoom:1;width:42px;height:11px;margin:1px;overflow:hidden;background:#2b5c97;*filter:alpha(opacity=50);*opacity:.5;line-height:999px}
+.banner .fullSlide .hd ul .on{background:#224f88}
+.banner .fullSlide .prev,.fullSlide .next{display:block;position:absolute;z-index:1;top:50%;margin-top:-30px;left:15%;z-index:1;width:40px;height:60px;background:url(../images/slider-arrow.png) -126px -137px #000 no-repeat;cursor:pointer;*filter:alpha(opacity=50);*opacity:.5;display:none}
+.banner .fullSlide .next{left:auto;right:15%;background-position:-6px -137px}
+.banner .bannerbg {width:100%;height:100%;background:repeat-x center center;background-size: cover;position:absolute;left:0;top:0;}
+</style>
+</head>
+<body class="loginbody">
+
+<form action="" method="post" id="form" class="form-horizontal login-form" role="form">
+
+<div class="zk_login">
+<ul class="login-form">
+<li><input type="text" class="login-input" name="UserName" id="UserName" placeholder="用户名"/>
+  <label class="icon user" for="txtUserName"></label>
+</li>
+
+<li>
+<input type="password" class="login-input"  name="PassWord" id="PassWord" placeholder="密码"/>
+<label class="icon pwd" for="txtPassword"></label>
+</li>
+
+<li>
+<input type="text" class="login-inputk" name="CheckCode" id="CheckCode" placeholder="验证码" />
+<span class="login-yanzhengma">
+<img id="Image1" alt="图片看不清？点击重新得到验证码" width="100" style="cursor:hand;" src="<!--{:url('Login/showcaptcha')}-->" title="看不清，换一张！" class="htl_table_form_td_input2_yzm"  onclick="this.src='<!--{:url("Login/showcaptcha")}-->?'+Math.random()"  />
+</span>
+<span class="icon yanzhengma" for="txtPassword"></span>
+</li>
+
+<li>
+<input type="submit" name="btnSubmit" value="立即登录" id="btnSubmit" class="login-btn" />
+</li>
+
+
+</lu>
+</div>
+<script src="/public/pub/validform/js/validform_v5.3.2.js"></script>
+<script src="/public/pub/validform/js/validform.js"></script>
+
+<div class="copy-right" style="color:#000;" >
+Copyright © <php> echo date("Y");</php>  Inc. All Rights Reserved. 
+</div>
+
+
+</form>
+<div class="banner" style="background:url(/public/skin/default/banner1.jpg) no-repeat;">
+
+</div>
+</body>
+
+</html>

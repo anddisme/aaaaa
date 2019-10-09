@@ -1,0 +1,301 @@
+.breadcrumb > li.add{
+  float: right;
+  margin-top: -2px;
+}
+.breadcrumb > li + li.add::before {
+  content: "" !important;
+  padding: 0 !important;
+}
+.form-group .form-control,
+.form-group .input-group-addon{
+  border-radius: 0 !important;
+}
+.form-group label {
+  font-size: 14px;font-weight: 400;
+}
+#member{ padding-bottom: 50px; background:#f0f0f0;}
+#member h2{ font-size: 18px; font-weight:400; padding-top:30px;color: #7AAB14}
+#member .content{ margin-top:20px; background:#fff; border:1px solid #dadada;min-height: 500px;height: auto;overflow: hidden;}
+#member .sidebar{ width:153px; float:left;}
+.sidebar{
+  width: 156px;
+  float: left;
+  padding: 8px 0px;
+  min-height: 320px;
+}
+.member-photo{
+  
+}
+.member-photo-img{
+  width: 87px;
+  margin: 0 auto;
+  padding: 3px;
+  border: 1px solid #ddd;
+}
+.member-photo-img img{
+  display: block;
+  width: 80px;height: 80px;
+}
+.member-photo h5{
+  width: 100%;line-height: 24px;
+  margin: 0;padding: 0;
+  font-size: 12px;
+  text-align: center;
+}
+.sidebar-photo a{
+  width: 120px;line-height: 32px;
+  font-size: 12px;
+}
+.sidebar-title{
+  width: 100%;height: 32px;line-height: 32px;
+  margin: 0 auto;
+  font-size: 14px;font-weight: 400;
+  border-bottom: 1px solid #ccc;
+  color: #fff;text-align: center;
+  background-color: #7AAB14;
+}
+.sidebar-title i.icon-home{
+  display: block;float: left;
+  width: 22px;height: 19px;
+  margin: 8px 5px 0 22px;
+}
+.sidebar-title span{
+  display: block;float: left;
+}
+.sidebar-nav{
+   list-style: outside none none;
+   padding: 0px;
+} 
+.sidebar-nav > li{
+  display: block;
+  border-bottom: 1px solid #ddd;
+}
+.sidebar-nav > li > a {
+ display: inline-block;
+  width: 100%;line-height: 32px;
+  font-size: 14px;color: #686868;text-align: center;
+}
+.sidebar-nav > li > a:hover,.sidebar-nav > li > a.active {
+  text-decoration: none;
+  color: #fff;
+  background-color: #27A9E3;
+}
+.main{
+  float: left;
+  width: 1052px;height: auto; min-height: 720px;overflow: hidden;
+  margin:0; padding: 0px 0 8px 0px;
+  border-left:1px solid #ddd;
+}
+ol.breadcrumb{
+  background-color: #f5f5f5;
+  border-radius: 0!important;
+  list-style: outside none none;
+  margin: 12px 12px !important;
+  padding: 12px 15px;
+  font-size: 12px;color: #686868;
+  border:1px solid #ddd;
+}
+.main-title{
+  margin: 0 12px;
+  height: 40px;line-height: 40px;
+  padding: 0px 0px 0px 4px;
+  border-bottom:1px solid #999999;
+  font-weight:400;font-size: 14px;color: #666;
+}
+.main-wrap{
+  margin: 0 12px;
+  padding: 0 0 40px;
+}
+.form-horizontal{
+  border:1px solid #ddd;
+  padding-top: 20px;
+}
+.radio-inline, 
+.checkbox-inline{
+  padding-left: 0px !important;
+  padding-top: 3px!important;
+}
+.form-btn{
+  width: 150px;height: 36px;line-height: 32px;
+  background-color: #FF8E01;
+  color: #fff;
+  border: 1px solid #ddd;
+}
+.form-yzm{
+  display: block;float: left;
+  width: 160px;height: 32px;line-height: 30px;
+  border: 1px solid #e0dfdf;
+  color: #686868;
+  text-indent: 0.5em;
+  margin-right: 10px;
+}
+.form-yzm-img{
+  display: block;float: left;
+  width: 106px;height: 34px;
+  border: 1px solid #e0dfdf;
+  margin: 0; padding: 0;
+}
+a.photo{
+  position: relative;
+  display: block;
+  width: 109px;height: 109px;
+  padding: 4px;
+  border: 1px solid #ddd;
+}
+a.photo img{
+  display: block;
+  margin: 0 auto;
+  width: 100px;height: 100px;
+}
+a.photo p {
+  background-color: #000;
+  bottom: 5px;
+  display: block;
+  height: 20px;
+  opacity: 0.5;
+  position: absolute;
+  width: 100px;
+}
+a.photo span{
+  bottom: 5px;
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  width: 100px;
+}
+ul.member-info{
+  display: block;
+  min-height: 1px;height: auto;overflow: hidden;
+}
+ul.member-info li{
+  display: block;
+  line-height: 24px;
+  font-size: 14px;
+  padding-bottom:10px; 
+}
+table.table tbody > tr > td,
+table.table tfoot > tr > td{
+  font-size: 12px;color: #686868;
+}
+table.table tfoot > tr > td{
+  padding: 0  8px!important;
+}
+.wrap-operate{
+  padding: 8px 5px;
+  border-top:1px solid #dadada;
+  border-left: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  min-height: 1px;height: auto;overflow: hidden;
+  clear: both;
+}
+.alert-wrap{
+  width: 100%;min-width: 1px;height: auto;overflow: hidden;
+  border: 1px solid #dadada;
+  padding:60px 80px; 
+}
+.alert-wrap strong{
+  font-size: 14px;
+  display: inline-block;
+  padding: 10px 30px;
+}
+.alert-wrap a{
+  font-size: 12px;
+  display: inline-block;
+}
+ul.modal-list{
+  display: block;
+  padding: 0;margin: 0;
+}
+ul.modal-list li{
+  display: inline-block;
+  margin: 5px;
+}
+ul.modal-list li a{
+  display: inline-block;
+  padding: 0 10px;line-height: 24px;
+  font-size: 12px;
+  border:1px solid #ddd;
+}
+ul.modal-list li a:focus,
+ul.modal-list li a:hover,
+ul.modal-list li a.active{
+  background-color: #27a9e3;
+  color: #fff;
+}
+.file-image{
+  position: relative;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  padding: 15px 10px 0px;
+  min-width: 1px;height: auto;overflow: hidden;
+}
+.file-image-noborder{
+  padding: 6px 0 0 0 !important;
+  border:none;
+}
+.file-image .uploadify{
+  float: left;
+}
+.file-image span{
+  display: inline-block;
+  padding: 0 10px; line-height: 32px;
+  font-size: 12px;
+}
+.file-image form{
+  display: inline-block;
+}
+img#album{
+  border: 1px solid #ccc;
+}
+ul.albums{
+  display: block;
+  min-height: 1px;height: auto;overflow: hidden;
+  padding: 5px 0;margin: 0;
+  border:1px dashed #ccc;
+}
+ul.albums li{
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #ddd;
+  margin: 5px 0 0 5px;
+}
+ul.albums li a.btn-close{
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: -8px;
+  right: -10px;
+  width: 16px;height: 16px;
+}
+ul.albums li img{
+  position: relative;
+  display: block;
+  width: 100px;height: 100px;
+}
+ul.geos{
+  display: block;
+  width: 100%; min-height: 1px;height: auto;overflow: hidden;
+  padding: 0;margin: 0;
+  border:1px solid #ccc;
+  border-bottom: none;
+}
+ul.geos li{
+  display: block;
+  width: 100%; min-height: 1px;height: auto;overflow: hidden;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+ul.geos li dl{
+  display: block;
+  width: 100%; min-height: 1px;height: auto;overflow: hidden;
+}
+ul.geos li dl dd{
+  display: inline-block;
+  width: 100px;height: 30px;padding: 2px 5px 2px 0;
+}

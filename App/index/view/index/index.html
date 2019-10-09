@@ -1,0 +1,159 @@
+<include file="index:head" />
+<div class="header">
+    <div class="container clearfix">
+
+        <a href="/index.php/index_index_web" class="logo2"><img src="/s/images/logo2.png" alt=""></a>
+        <div class="header-r">
+            <php>
+                $time = date("Y-m-d");
+                echo $time;
+            </php>
+           ，<!--{$username}-->你好，欢迎登录人人帮线索系统 <a href="#">[个人中心]</a> <a onclick="return confirm('确定要退出吗？');" href="<!--{:url('common/logout')}-->">[安全退出]</a>
+        </div>
+    </div>
+</div>
+
+<div class="container nr-wrap clearfix">
+    <div class="l-bd">
+        <div class="logo"></div>
+        <ul class="main-nav">
+            <li class="on"><a href="#"><div></div><span>主页</span></a></li>
+            <li><a href="#"><div></div><span>我的线索</span></a></li>
+            <li><a href="#"><div></div><span>基本资料</span></a></li>
+            <li><a href="#"><div></div><span>安全退出</span></a></li>
+        </ul>
+    </div>
+    <div class="nr-r">
+        <div class="policy-wrap white-bg bdr shadow clearfix">
+            <div class="t-icon"><img class="img-res" src="/s/images/icon1.png" alt=""></div>
+            <div class="policy-slide">
+                <div class="hd clearfix">
+                    <div class="prev"></div>
+                    <div class="next"></div>
+                </div>
+                <div class="bd">
+                    <ul>
+                        <li><a href="#">人人帮集团最新政策出台</a></li>
+                        <li><a href="#">人人帮集团最新政策出台</a></li>
+                        <li><a href="#">人人帮集团最新政策出台</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="acc-wrap white-bg bdr shadow clearfix">
+            <div class="t-icon"><img class="img-res" src="/s/images/icon2.png" alt=""></div>
+            <p>当前账户余额为<span>300.00</span>元</p>
+            <a href="#" class="recharge-btn">点击充值</a>
+        </div>
+        <div class="my-clue clearfix white-bg shadow bdr">
+            <div class="my-clue-l">
+                <div class="clue-tit">总线索</div>
+                <ul class="clearfix">
+                    <li><span><!--{$midcount}--></span><p>线索总数</p></li>
+                    <li><span><!--{$todaycount}--></span><p>今日新增</p></li>
+                    <li><span>0</span><p>昨日线索</p></li>
+                </ul>
+            </div>
+            <div class="my-clue-r" style="display: none;">
+                <div class="clue-tit">总线索</div>
+                <ul class="clearfix">
+                    <li><span>36</span><p>今日新增</p></li>
+                    <li><span>104</span><p>待领取</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="busi-type clearfix white-bg shadow bdr">
+            <div class="busi-type-top clearfix">
+                <div class="busi-tit">业务分类</div>
+                <div class="search-wrap">
+                    <input type="text" placeholder="请输入线索编号或线索名称进行搜索">
+                    <input type="button" class="search-btn" value="">
+                </div>
+            </div>
+            <div class="qg-wrap">
+                <php>
+                    $caidan = caidan(0,10);
+                </php>
+                <ul class="clearfix busi-list">
+                    <li <if condition="'' eq $typeid">class="on"</if>><a href="<!--{:url('index/web')}-->">全部</a></li>
+                    <foreach name="caidan" item="menu">
+                        <li <if condition="$menu['id'] eq $typeid">class="on"</if>><a href="<!--{:url('index/web',array('TypeID'=>$menu[id]))}-->"><!--{$menu['TypeName']}--></a></li>
+                    </foreach>
+
+                </ul>
+                <div class="clearfix ss-wrap">
+                    <div class="ss-l"><label>金额范围</label><input type="number" style="width: 60px;" placeholder=""><span>至</span><input type="text" placeholder=""></div>
+                    <div class="ss-c"><label>发布时间</label><input type="date" style="width: 135px;" placeholder="2019-03-21"><span>至</span><input type="text" style="width: 135px;" placeholder="2019-03-26"></div>
+                    <div class="ss-r">
+                        <label>所在区域</label>
+                        <select name="">
+                            <option value="">四川省</option>
+                            <option value="">广东省</option>
+                        </select>
+                        <select name="">
+                            <option value="">成都市</option>
+                            <option value="">绵阳市</option>
+                        </select>
+                    </div>
+                    <input type="button" class="ss-btn" value="搜索">
+                </div>
+            </div>
+        </div>
+        <div class="clue-wrap qg-wrap white-bg shadow bdr">
+            <div class="clue-total">“公司注册”共有67条线索</div>
+            <ul class="clue-list" id="erjishuxing">
+                <foreach name="list" item="menu">
+                <li class="clearfix">
+                    <div class="clue-name"><!--{$menu['Title']}--></div>
+
+                    <div class="clue-place" style="width: 170px;">所在地区：<span><!--{:cityname($menu['d1'])}-->/<!--{:cityname($menu['d2'])}--></span></div>
+                    <div class="clue-date">发布时间：2019-09-01</div>
+                    <div class="clue-num">线索编号：10457851</div>
+                    <div class="clue-op">
+                        <a href="#" class="dt-btn">查看详情</a>
+                        <a href="#" class="rec-clue">领取线索</a>
+                    </div>
+                </li>
+                    </foreach>
+            </ul>
+            <a href="javascript:;" id="getmore" class="more-btn">查看更多</a>
+        </div>
+    </div>
+</div>
+ <script>
+     $("document").ready(function(){
+         var p = 1;
+        $("#getmore").click(function(){
+            p+=1;
+            //alert(p);return false;
+            $.ajax({
+                type: "POST",
+                url: "<!--{:url('index/web')}-->",
+                data: {p:p},
+                dataType: "json",
+                success: function(data){
+
+                    var trs = '';
+                    $.each(data,function(k,v) {
+                        trs +='<li class="clearfix">';
+                        trs +='<div class="clue-name">测试测试测试测试测试</div>';
+
+                        trs +='<div class="clue-place" style="width: 170px;">所在地区：<span>111/222</span></div>';
+                        trs +='<div class="clue-date">发布时间：2019-09-01</div>';
+                        trs +='<div class="clue-num">线索编号：10457851</div>';
+                        trs +='<div class="clue-op">';
+                        trs +='<a href="#" class="dt-btn">查看详情</a>';
+                        trs +='<a href="#" class="rec-clue">领取线索</a>';
+                        trs +='</div>';
+                        trs +='</li>';
+                    });
+                    //console.log(data);
+                    $('#erjishuxing').append(trs);
+
+                }
+            });
+
+        })
+     })
+ </script>
+<include file="index:foot" />

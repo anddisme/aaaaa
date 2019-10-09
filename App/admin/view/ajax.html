@@ -1,0 +1,56 @@
+<style>
+.text1{
+text-align:center; color:#F00;
+background:#fff;
+height:20px;
+width:100%;
+font-size:15px;
+}
+</style>
+<script src="/public/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script>
+$(function(){
+//$("tbody>tr:even").addClass("dan");
+$("tbody>tr>td").dblclick(function(){
+var val=$(this).html();
+var fd=$(this).attr("fd");
+var id=$(this).parents().attr("id");
+//alert(fd);
+
+var ishasstr=$(this).find("input").length;
+if(ishasstr==true){ return false; }
+if(fd!=null){
+  $(this).html("<input style='border:1px solid #000;' id='edit"+fd+id+"' value='"+val+"' class='text1'> ");
+}
+
+
+$("#edit"+fd+id).focus().live("blur",function(){
+var table = $("#table").val();
+var aval = $(this).val();
+if(val==aval){ $(this).parents("td").html(val); return false; }
+if(table=='news_type')
+{
+	if(isNaN(aval))
+	{
+	  show_('请输入数字');
+	  return false;
+	}
+}
+$(this).parents("td").html(aval);
+ // $.post("run.php?m=Pub&a=xiugai",{val:aval,fd:fd,id:id,table:table});
+  	  show1_('保存中...');
+
+  $.post("run.php?m=Pub&a=xiugai",{val:aval,fd:fd,id:id,table:table},function(result){
+  	 
+   if($.trim(result)!='1')
+   {
+    show_(result);
+	return false;
+   }
+    shows_('更新成功.');
+		if(table=='news_type'){ window.location.reload(); }
+  });
+});
+});
+});
+</script>
