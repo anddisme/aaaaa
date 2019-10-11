@@ -81,6 +81,17 @@ class Index extends Common
 
 
 
+    public function api()
+    {
+        @header("Content-Type:text/html; charset=utf-8");
+        $uesrname = $_REQUEST['kw'];
+        //return json_encode($uesrname);die;
+        $str = Db::name('member')->where("`username` = $uesrname")->find();
+        echo json_encode($str);die;
+        //print_r($midcount);die;
+    }
+
+
     public function book()
     {
         if(request()->isPost()) {

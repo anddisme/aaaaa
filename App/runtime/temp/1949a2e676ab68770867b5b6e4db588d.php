@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html";i:1568079890;s:63:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\index\js.html";i:1568028337;s:65:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\index\foot.html";i:1510904601;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html";i:1570774008;s:63:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\index\js.html";i:1568028337;s:65:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\index\foot.html";i:1510904601;}*/ ?>
 ﻿<!DOCTYPE html>
 <html>
 <head>
@@ -415,6 +415,16 @@ $(this).parents("td").html(aval);
         </script>
       </dd>
     </dl>
+
+
+
+  
+
+
+
+
+
+
     <dl>
       <dt>开启静态</dt>
       <dd>

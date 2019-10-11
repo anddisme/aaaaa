@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:66:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/index\view\index\index.html";i:1570591552;s:65:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/index\view\index\head.html";i:1570502831;s:66:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/index\view\index\title.html";i:1568873110;s:65:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/index\view\index\foot.html";i:1570502729;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:66:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/index\view\index\index.html";i:1570592051;s:65:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/index\view\index\head.html";i:1570502831;s:66:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/index\view\index\title.html";i:1568873110;s:65:"E:\2019phpstudy\PHPTutorial\WWW\xs/App/index\view\index\foot.html";i:1570502729;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +58,7 @@ if(empty($article['id']) && empty($TypeArr['id'])){
                 $time = date("Y-m-d");
                 echo $time;
              ?>
-           ，<?php echo $username; ?>你好，欢迎登录人人帮线索系统 <a href="#">[个人中心]</a> <a href="<?php echo url('common/logout'); ?>">[安全退出]</a>
+           ，<?php echo $username; ?>你好，欢迎登录人人帮线索系统 <a href="#">[个人中心]</a> <a onclick="return confirm('确定要退出吗？');" href="<?php echo url('common/logout'); ?>">[安全退出]</a>
         </div>
     </div>
 </div>

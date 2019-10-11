@@ -1208,7 +1208,7 @@ var url='';
                 <div class="imggroup imgstr" id="imgstr<?php echo $i; ?>"><ul></ul></div>
                 <div class="imggroup">
                     <ul id="imgstrul<?php echo $i; ?>">
-                        <?php $_5d9c40b840cec=imgs($arr['id'],$i); if(is_array($_5d9c40b840cec) || $_5d9c40b840cec instanceof \think\Collection): if( count($_5d9c40b840cec)==0 ) : echo "" ;else: foreach($_5d9c40b840cec as $key=>$img): ?>
+                        <?php $_5d9ede7e67250=imgs($arr['id'],$i); if(is_array($_5d9ede7e67250) || $_5d9ede7e67250 instanceof \think\Collection): if( count($_5d9ede7e67250)==0 ) : echo "" ;else: foreach($_5d9ede7e67250 as $key=>$img): ?>
                             <li id="img<?php echo $img['id']; ?>">
                                 <a><img id="xc<?php echo $img['id']; ?>" src="<?php echo $img['image']; ?>"></a>
 <span>

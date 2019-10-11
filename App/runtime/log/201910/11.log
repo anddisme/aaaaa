@@ -1,0 +1,1169 @@
+[ 2019-10-11T13:43:46+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.082331s][吞吐率：12.15req/s] [内存消耗：2,022.96kb] [文件加载：54]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://xs.dd',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '512',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+  'Web_Name' => '成都佳罐塑料制品有限公司',
+  'Addess' => '/public/uploads/image/20190902/20190902103622_40272.png',
+  'taobaourl' => '/public/uploads/image/20190827/20190827170403_34772.jpg',
+  's' => 
+  array (
+    0 => '/public/uploads/image/20191011/157077247355.png,/public/uploads/image/20191011/157077247423.jpg,',
+    1 => '',
+  ),
+  'cache' => '0',
+  'Locked' => '0',
+  'Title' => '#1',
+  't3' => '##100000',
+  'SeoTitle' => '###1',
+  'Description' => '####1',
+  'ips' => '125.69.102.34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:43:47+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.070641s][吞吐率：14.16req/s] [内存消耗：2,120.58kb] [文件加载：58]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:600]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:600]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:47:53+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.076869s][吞吐率：13.01req/s] [内存消耗：2,264.71kb] [文件加载：60]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:47:57+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.075276s][吞吐率：13.28req/s] [内存消耗：2,120.58kb] [文件加载：58]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:48:02+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.172351s][吞吐率：5.80req/s] [内存消耗：2,120.58kb] [文件加载：58]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:48:26+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.080054s][吞吐率：12.49req/s] [内存消耗：2,264.71kb] [文件加载：60]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:48:38+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.077514s][吞吐率：12.90req/s] [内存消耗：2,264.71kb] [文件加载：60]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:48:42+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.073207s][吞吐率：13.66req/s] [内存消耗：2,120.58kb] [文件加载：58]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:601]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:50:20+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.068395s][吞吐率：14.62req/s] [内存消耗：2,264.70kb] [文件加载：60]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:602]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:602]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:50:30+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/admin_Common_uploads.php
+[ log ] xs.dd/index.php/admin_Common_uploads.php [运行时间：0.058998s][吞吐率：16.95req/s] [内存消耗：2,049.88kb] [文件加载：53]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Common',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary71ZyLBqr3FZDmhu4',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://xs.dd',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '68148',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+  'Web_Name' => '成都佳罐塑料制品有限公司',
+  'Addess' => '/public/uploads/image/20190902/20190902103622_40272.png',
+  'taobaourl' => '/public/uploads/image/20190827/20190827170403_34772.jpg',
+  's' => 
+  array (
+    0 => '',
+    1 => '',
+  ),
+  'cache' => '0',
+  'Locked' => '0',
+  'Title' => '#1',
+  't3' => '##100000',
+  'SeoTitle' => '###1',
+  'Description' => '####1',
+  'ips' => '125.69.102.34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->uploads[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Common.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-10-11T13:50:30+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/admin_Common_uploads.php
+[ log ] xs.dd/index.php/admin_Common_uploads.php [运行时间：0.070263s][吞吐率：14.23req/s] [内存消耗：2,049.91kb] [文件加载：53]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Common',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary8A1YbKh2JEUysIx9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://xs.dd',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '118456',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+  'Web_Name' => '成都佳罐塑料制品有限公司',
+  'Addess' => '/public/uploads/image/20190902/20190902103622_40272.png',
+  'taobaourl' => '/public/uploads/image/20190827/20190827170403_34772.jpg',
+  's' => 
+  array (
+    0 => '',
+    1 => '',
+  ),
+  'cache' => '0',
+  'Locked' => '0',
+  'Title' => '#1',
+  't3' => '##100000',
+  'SeoTitle' => '###1',
+  'Description' => '####1',
+  'ips' => '125.69.102.34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->uploads[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Common.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-10-11T13:50:30+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/admin_Common_uploads.php
+[ log ] xs.dd/index.php/admin_Common_uploads.php [运行时间：0.067433s][吞吐率：14.83req/s] [内存消耗：2,049.95kb] [文件加载：53]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Common',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary4B9Bg1rQAhleUtXZ',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://xs.dd',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '317193',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+  'Web_Name' => '成都佳罐塑料制品有限公司',
+  'Addess' => '/public/uploads/image/20190902/20190902103622_40272.png',
+  'taobaourl' => '/public/uploads/image/20190827/20190827170403_34772.jpg',
+  's' => 
+  array (
+    0 => '',
+    1 => '',
+  ),
+  'cache' => '0',
+  'Locked' => '0',
+  'Title' => '#1',
+  't3' => '##100000',
+  'SeoTitle' => '###1',
+  'Description' => '####1',
+  'ips' => '125.69.102.34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->uploads[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Common.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-10-11T13:50:42+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.064265s][吞吐率：15.56req/s] [内存消耗：2,120.56kb] [文件加载：58]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:602]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:602]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:50:56+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.080560s][吞吐率：12.41req/s] [内存消耗：2,264.70kb] [文件加载：60]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:602]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:602]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:51:04+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/admin_Common_uploads.php
+[ log ] xs.dd/index.php/admin_Common_uploads.php [运行时间：0.070300s][吞吐率：14.22req/s] [内存消耗：2,049.88kb] [文件加载：53]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Common',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryu1mORfXL69qlGnAs',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://xs.dd',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '68148',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+  'Web_Name' => '成都佳罐塑料制品有限公司',
+  'Addess' => '/public/uploads/image/20190902/20190902103622_40272.png',
+  'taobaourl' => '/public/uploads/image/20190827/20190827170403_34772.jpg',
+  's' => 
+  array (
+    0 => '',
+    1 => '',
+  ),
+  'cache' => '0',
+  'Locked' => '0',
+  'Title' => '#1',
+  't3' => '##100000',
+  'SeoTitle' => '###1',
+  'Description' => '####1',
+  'ips' => '125.69.102.34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->uploads[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Common.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-10-11T13:51:05+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/admin_Common_uploads.php
+[ log ] xs.dd/index.php/admin_Common_uploads.php [运行时间：0.057843s][吞吐率：17.29req/s] [内存消耗：2,049.91kb] [文件加载：53]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Common',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryLGBPmIG0onl7pkjd',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://xs.dd',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '118456',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+  'Web_Name' => '成都佳罐塑料制品有限公司',
+  'Addess' => '/public/uploads/image/20190902/20190902103622_40272.png',
+  'taobaourl' => '/public/uploads/image/20190827/20190827170403_34772.jpg',
+  's' => 
+  array (
+    0 => '',
+    1 => '',
+  ),
+  'cache' => '0',
+  'Locked' => '0',
+  'Title' => '#1',
+  't3' => '##100000',
+  'SeoTitle' => '###1',
+  'Description' => '####1',
+  'ips' => '125.69.102.34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->uploads[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Common.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-10-11T13:51:08+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/admin_Common_uploads.php
+[ log ] xs.dd/index.php/admin_Common_uploads.php [运行时间：0.073567s][吞吐率：13.59req/s] [内存消耗：2,050.02kb] [文件加载：53]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Common',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary1A4c0A4Kb80O5cFO',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://xs.dd',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '317193',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+  'Web_Name' => '成都佳罐塑料制品有限公司',
+  'Addess' => '/public/uploads/image/20190902/20190902103622_40272.png',
+  'taobaourl' => '/public/uploads/image/20190827/20190827170403_34772.jpg',
+  's' => 
+  array (
+    0 => '',
+    1 => '',
+  ),
+  'cache' => '0',
+  'Locked' => '0',
+  'Title' => '#1',
+  't3' => '##100000',
+  'SeoTitle' => '###1',
+  'Description' => '####1',
+  'ips' => '125.69.102.34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->uploads[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Common.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-10-11T13:52:04+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.071817s][吞吐率：13.92req/s] [内存消耗：2,264.71kb] [文件加载：60]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:602]
+[ error ] [8]未定义变量: arr[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:602]
+
+---------------------------------------------------------------
+[ 2019-10-11T13:52:10+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/admin_Common_uploads1111.php
+[ log ] xs.dd/index.php/admin_Common_uploads1111.php [运行时间：0.064386s][吞吐率：15.53req/s] [内存消耗：2,002.43kb] [文件加载：54]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Common',
+    2 => 'uploads1111',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary4j7rXc8rQqhxM8FA',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://xs.dd',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '68148',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+  'Web_Name' => '成都佳罐塑料制品有限公司',
+  'Addess' => '/public/uploads/image/20190902/20190902103622_40272.png',
+  'taobaourl' => '/public/uploads/image/20190827/20190827170403_34772.jpg',
+  's' => 
+  array (
+    0 => '',
+    1 => '',
+  ),
+  'cache' => '0',
+  'Locked' => '0',
+  'Title' => '#1',
+  't3' => '##100000',
+  'SeoTitle' => '###1',
+  'Description' => '####1',
+  'ips' => '125.69.102.34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-10-11T13:52:10+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/admin_Common_uploads1111.php
+[ log ] xs.dd/index.php/admin_Common_uploads1111.php [运行时间：0.072543s][吞吐率：13.78req/s] [内存消耗：2,002.44kb] [文件加载：54]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Common',
+    2 => 'uploads1111',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarykGazQ1ZBNvlmmr0B',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://xs.dd',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '118456',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+  'Web_Name' => '成都佳罐塑料制品有限公司',
+  'Addess' => '/public/uploads/image/20190902/20190902103622_40272.png',
+  'taobaourl' => '/public/uploads/image/20190827/20190827170403_34772.jpg',
+  's' => 
+  array (
+    0 => '',
+    1 => '',
+  ),
+  'cache' => '0',
+  'Locked' => '0',
+  'Title' => '#1',
+  't3' => '##100000',
+  'SeoTitle' => '###1',
+  'Description' => '####1',
+  'ips' => '125.69.102.34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-10-11T13:52:11+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/admin_Common_uploads1111.php
+[ log ] xs.dd/index.php/admin_Common_uploads1111.php [运行时间：0.053932s][吞吐率：18.54req/s] [内存消耗：2,002.45kb] [文件加载：54]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Common',
+    2 => 'uploads1111',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarytNMGMb1TXoXm8B2C',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://xs.dd',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '317193',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+  'Web_Name' => '成都佳罐塑料制品有限公司',
+  'Addess' => '/public/uploads/image/20190902/20190902103622_40272.png',
+  'taobaourl' => '/public/uploads/image/20190827/20190827170403_34772.jpg',
+  's' => 
+  array (
+    0 => '',
+    1 => '',
+  ),
+  'cache' => '0',
+  'Locked' => '0',
+  'Title' => '#1',
+  't3' => '##100000',
+  'SeoTitle' => '###1',
+  'Description' => '####1',
+  'ips' => '125.69.102.34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-10-11T14:06:55+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin_Web_index.php
+[ log ] xs.dd/index.php/admin_Web_index.php [运行时间：0.077262s][吞吐率：12.94req/s] [内存消耗：2,237.52kb] [文件加载：60]
+[ info ] [ LANG ] E:\2019phpstudy\PHPTutorial\WWW\xs\App\mycore\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Web',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=4tip3umvep28lhaj1jjad80m20',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xs.dd/index.php/admin_Web_index.php',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'xs.dd',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Web->index[ E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\controller\Web.php ]
+[ info ] [ VIEW ] E:\2019phpstudy\PHPTutorial\WWW\xs/App/admin\view\web\index.html [ array (
+  0 => 'webinfo',
+  1 => 'admin',
+  2 => 'readme',
+  3 => 'SERVER',
+  4 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Illegal string offset 'logintime'[E:\2019phpstudy\PHPTutorial\WWW\xs\App\admin\common.php:43]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:399]
+[ error ] [8]未定义变量: links[E:\2019phpstudy\PHPTutorial\WWW\xs\App\runtime\temp\1949a2e676ab68770867b5b6e4db588d.php:411]
+
+---------------------------------------------------------------

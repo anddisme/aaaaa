@@ -152,6 +152,7 @@ $sql=$dbObj->getLastSql();
 			mkdir($path,0777,true);
 		}
 		$file = $this->request->file('file_name');
+		//print_r($file);die;
 		if(!$file){
 			$result = array('src'=>'请选择要上传的图片');
 			return json_encode($result);
